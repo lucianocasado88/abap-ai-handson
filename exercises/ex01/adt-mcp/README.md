@@ -75,9 +75,13 @@ Veja [ADT MCP Tools](https://help.sap.com/docs/abap-cloud/abap-development-tools
    >  "adt.mcpServer.enabled": true
    > ```
 
+   ![Habilitar MCP](images/ex1_mcp_setting_2.png)
+
 4. Opcionalmente, você pode configurar a **porta do MCP server** (padrão: `2236`). Altere apenas se a porta 2236 estiver ocupada na sua máquina:
    - Pesquise por `ADT MCP port` nas Settings
    - Defina qualquer porta disponível entre `0` e `65535`
+
+   ![Porta MCP](images/ex1_mcp_setting_3.png)
 
 5. **Recarregue o Visual Studio Code** se for solicitado, ou feche e abra o aplicativo novamente.
 
@@ -144,21 +148,49 @@ Se o ADT MCP Server não aparecer ou falhar ao iniciar:
 
 ---
 
-## Exercício 1.3: Verificar/Inserir as ADT MCP Tools no seu coding agent
+## Exercício 1.3: Inserir as ADT MCP Tools no seu coding agent
 [^Topo da página](#)
 
 > Abra o seu coding agent em agent mode e confirme que as ADT MCP tools estão carregadas e disponíveis.
 
 <details>
-  <summary>🔵 GitHub Copilot - Clique para expandir!</summary>
+  <summary>🔵 Cline - Clique para expandir!</summary>
 
-1. Abra o **GitHub Copilot Chat** no Visual Studio Code:
-   - Clique no **ícone do Copilot** na Activity Bar (esquerda), ou
-   - Pressione **`Ctrl+Shift+I`** (macOS: **`Cmd+Shift+I`**)
+1. Abra o **Cline** no Visual Studio Code:
+   - Clique no **ícone do Cline** na Activity Bar (esquerda)
 
-2. Mude o modo do chat para **"Agent"** no menu suspenso do chat.
+      ![Cline](images/ex1_cline.png)
 
-   > ℹ️ **Nota**: As MCP tools só estão disponíveis no **Agent mode**, e não nos modos padrão Ask ou Edit.
+   - Clique no **ícone de customização** no topo direito da tela do Cline
+
+      ![Cline customização](images/ex1_cline_1.png)
+   
+   - Clique na aba **MCP** 
+
+      ![Cline MCP](images/ex1_cline_3.png)
+
+   - Clique na aba **MCP** 
+
+      ![Cline configurações do MCP](images/ex1_cline_4.png)
+
+2. Deverá substituir o JSON atual pelo seguinte JSON:
+
+   ```JSON
+   {
+      "mcpServers": {
+         "abap-adt": {
+            "type": "streamableHttp",
+            "url": "http://localhost:2236/mcp",
+            "headers": {
+               "Authorization": "Bearer <TOKEN>"
+            },
+            "disabled": false
+         }
+      }
+   }
+   ```
+
+   > ℹ️ **Nota**: Informar o seu token obtido no passo do item 6 do tópico 1.1 (_veja_ [Exercício 1.1: Habilitar o ADT MCP Server nas Configurações do Visual Studio Code](#exercício-11-habilitar-o-adt-mcp-server-nas-configurações-do-visual-studio-code)).
 
 3. Clique no botão **"Configure Tools"** (ícone de chave inglesa das tools) na barra de entrada do chat do Copilot.
 
@@ -190,7 +222,7 @@ Se o ADT MCP Server não aparecer ou falhar ao iniciar:
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
 
-1. Para inicar a configuração, você precisa do token gerado automáticamente no VS Code. Falamos desse ponto no item 6 do tópico 1.1 (_veja_ [Exercício 1.1: Habilitar o ADT MCP Server nas Configurações do Visual Studio Code](#exercício-11-habilitar-o-adt-mcp-server-nas-configurações-do-visual-studio-code)_)
+1. Para inicar a configuração, você precisa do token gerado automáticamente no VS Code. Falamos desse ponto no item 6 do tópico 1.1 (_veja_ [Exercício 1.1: Habilitar o ADT MCP Server nas Configurações do Visual Studio Code](#exercício-11-habilitar-o-adt-mcp-server-nas-configurações-do-visual-studio-code))
 1. Abra o **Claude Code** via terminal ou power shell:
    - Digite o comand **`Ctrl+Shift+I`** na Activity Bar (esquerda), ou
    - Pressione **`Ctrl+Shift+I`** (macOS: **`Cmd+Shift+I`**)
