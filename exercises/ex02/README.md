@@ -43,7 +43,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 ## Exercício 2.1: Criar o Pacote ABAP
 [^Topo da página](#)
 
-> Crie o seu pacote do exercício **`ZRAP130_AI_###`** no **ADT for Eclipse**. 
+> Crie o seu pacote do exercício **`ZSITFOR_AI_###`** no **ADT for Eclipse**. 
 
 > ℹ️ **Em breve**: A criação de pacotes diretamente a partir do Visual Studio Code estará disponível em uma próxima versão da extensão ADT for Visual Studio Code.
 
@@ -55,14 +55,14 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 2. No **Project Explorer**, expanda a conexão com o seu sistema e clique com o botão direito em **`ZLOCAL`** → **New → ABAP Package**.
 
 3. Preencha os detalhes do pacote:
-   - **Name**: `ZRAP130_AI_###` (substitua `###` pelo seu ID do grupo)
+   - **Name**: `ZSITFOR_AI_###` (substitua `###` pelo seu ID do grupo)
    - **Description**: `RAP AI Package ###`
    - **Superpackage**: `ZLOCAL`
    - **Package Type**: `Development`
 
 4. Clique em **Next** (ou **Finish**) e atribua o pacote a uma transport request, se for solicitado.
 
-5. Verifique se o pacote **`ZRAP130_AI_###`** aparece no Project Explorer sob `ZLOCAL`.
+5. Verifique se o pacote **`ZSITFOR_AI_###`** aparece no Project Explorer sob `ZLOCAL`.
 
 6. Volte para o **Visual Studio Code**. Você pode adicionar o pacote criado ao seu workspace.
 
@@ -70,7 +70,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 
    ![Adicionar pacote ao workspace](images/ex02_add_package_workspace.png)
 
-   Preencha com o nome do seu pacote `ZRAP130_AI_###` e pressione **Enter**
+   Preencha com o nome do seu pacote `ZSITFOR_AI_###` e pressione **Enter**
 
    ![Adicionar pacote ao workspace](images/ex02_add_package_workspace_2.png)
 
@@ -121,7 +121,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
    Gere um app SAP Fiori transacional para gerenciamento de viagens usando o ABAP RAP generator.
 
    Use a seguinte especificação:
-   - Pacote: ZRAP130_AI_###
+   - Pacote: ZSITFOR_AI_###
    - Entidade 1: Travel, baseada na estrutura /DMO/TRAVEL_DATA
    - Entidade 2: Booking, baseada na estrutura /DMO/BOOKING_DATA (filha de Travel)
    - Todos os nomes de objetos gerados devem terminar com o sufixo "###"
@@ -154,7 +154,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 
    ![Saída do generator via MCP tool](images/ex02_generator_output.gif)
 
-8. No **Explorer** do Visual Studio Code, pressione **F5** para atualizar o seu pacote **`ZRAP130_AI_###`**. Você deve ver todos os objetos gerados listados nas respectivas pastas por tipo de objeto.
+8. No **Explorer** do Visual Studio Code, pressione **F5** para atualizar o seu pacote **`ZSITFOR_AI_###`**. Você deve ver todos os objetos gerados listados nas respectivas pastas por tipo de objeto.
 
    ![Objetos gerados no Explorer do Visual Studio Code](images/ex02_generated_objects.gif)
 
@@ -172,7 +172,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 
     > ⚠️ Se algum objeto falhar na ativação, verifique o painel **Problems** (**`Ctrl+Shift+M`**) para ver os detalhes do erro. Corrija os problemas e ative novamente.
 
-    > ℹ️ **Dica**: Você também pode pedir ao seu coding agent para ativar via MCP: digite `Ative todos os objetos do pacote ZRAP130_AI_### usando a MCP tool` e permita a chamada da tool `abap_activate-objects`.
+    > ℹ️ **Dica**: Você também pode pedir ao seu coding agent para ativar via MCP: digite `Ative todos os objetos do pacote ZSITFOR_AI_### usando a MCP tool` e permita a chamada da tool `abap_activate-objects`.
 
 </details>
 
@@ -182,7 +182,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 [^Topo da página](#)
 
 Agora que você:
-- Criou o pacote ABAP **`ZRAP130_AI_###`** no ADT for Eclipse
+- Criou o pacote ABAP **`ZSITFOR_AI_###`** no ADT for Eclipse
 - Gerou um UI service transacional RAP completo (Travel + Booking) via ADT MCP tools
 - Ativou todos os objetos gerados
 

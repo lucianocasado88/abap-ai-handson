@@ -28,7 +28,7 @@ Liste todos os ABAP RAP generators disponíveis usando a MCP tool.
 Gere um app SAP Fiori transacional para gerenciamento de viagens com DRAFT usando o ABAP RAP generator.
 
 Use a seguinte especificação:
-- Pacote: ZRAP130_AI_###
+- Pacote: ZSITFOR_AI_###
 - Entidade 1: Travel, baseada na estrutura /DMO/TRAVEL_DATA
 - Entidade 2: Booking, baseada em /DMO/BOOKING_DATA (filha de Travel)
 - Todos os nomes de objetos gerados devem terminar com o sufixo "###"
@@ -37,7 +37,7 @@ Use a seguinte especificação:
 ### Exercício 2: Ativar todos os objetos
 
 ```
-Ative todos os objetos do pacote ZRAP130_AI_### usando a MCP tool.
+Ative todos os objetos do pacote ZSITFOR_AI_### usando a MCP tool.
 ```
 
 

@@ -400,7 +400,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 2. Navegue pela hierarquia de pacotes para encontrar objetos.
 
-3. Use **`Ctrl+Shift+A`** para abrir rapidamente qualquer objeto pelo nome. Você pode usar wildcards, como `zrap130_*###`.
+3. Use **`Ctrl+Shift+A`** para abrir rapidamente qualquer objeto pelo nome. Você pode usar wildcards, como `zsitfor_*###`.
 
 4. Objetos com alterações no backend ainda não salvas são marcados com **(L)** e precisam ser **ativados** (**`Ctrl+F3`**) para ficarem ativos no sistema.
 
