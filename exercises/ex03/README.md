@@ -84,7 +84,7 @@ Carregar dados de demonstração torna o app mais interessante de usar nos demai
 
 1. Abra o **Command Palette** (**`Ctrl+Shift+P`**) e digite `ABAP: Create new ABAP Object`, ou use **`Ctrl+Shift+Alt+N`** (macOS: **`Cmd+Option+Shift+N`**), para criar uma nova classe ABAP.
 
-   - Package: **`ZRAP130_AI_###`**
+   - Package: **`ZSITFOR_AI_###`**
    - Name: **`ZCL_TRAVEL_HELPER_###`**
    - Description: **`Travel helper class ###`**
   

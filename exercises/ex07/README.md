@@ -54,8 +54,8 @@ A documentação oficial traz um [exemplo de custom agent para desenvolvimento A
 
    ## Regras
    - Sempre use as ADT MCP tools (`abap_generators-*`, `abap_creation-create_object`, `abap_activate-objects` etc.) para todas as operações de backend ABAP. Nunca gere código ABAP manualmente quando uma MCP tool puder fazer isso.
-   - O sufixo do meu ID do grupo é `###`. Use esse sufixo em todos os nomes de artefatos (por exemplo, `ZRAP130_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
-   - Pacote para todos os objetos: `ZRAP130_AI_###`.
+   - O sufixo do meu ID do grupo é `###`. Use esse sufixo em todos os nomes de artefatos (por exemplo, `ZSITFOR_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
+   - Pacote para todos os objetos: `ZSITFOR_AI_###`.
    ```
 
    > ℹ️ Substitua `###` pelo seu ID do grupo nas instruções do agente acima.
@@ -93,8 +93,8 @@ A documentação oficial traz um [exemplo de custom agent para desenvolvimento A
 
    ## Regras
    - Sempre use as ADT MCP tools (`abap_generators-*`, `abap_creation-create_object`, `abap_activate-objects` etc.) para todas as operações de backend ABAP. Nunca gere código ABAP manualmente quando uma MCP tool puder fazer isso.
-   - O sufixo do meu ID do grupo é `###`. Use esse sufixo em todos os nomes de artefatos (por exemplo, `ZRAP130_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
-   - Pacote para todos os objetos: `ZRAP130_AI_###`.
+   - O sufixo do meu ID do grupo é `###`. Use esse sufixo em todos os nomes de artefatos (por exemplo, `ZSITFOR_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
+   - Pacote para todos os objetos: `ZSITFOR_AI_###`.
    ```
 
    > ℹ️ Substitua `###` pelo seu ID do grupo nas instruções do agente acima.
