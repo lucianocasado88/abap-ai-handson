@@ -242,3 +242,4 @@ Agora que você:
 você pode continuar com o próximo exercício: **[Exercício 2: Gerar o App SAP Fiori via MCP Tools](../ex02/README.md)**
 
 ---
+
