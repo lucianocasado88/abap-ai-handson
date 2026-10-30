@@ -1,230 +1,230 @@
-[Home - RAP130 - Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers in Visual Studio Code](../../README.md)
+[Início - RAP130 - Crie Apps SAP Fiori com ABAP Cloud e SAP Joule for Developers no Visual Studio Code](../../README.md)
 
-# Exercise 6: Debug ABAP Code in Visual Studio Code _(Optional)_
+# Exercício 6: Depurar Código ABAP no Visual Studio Code _(Opcional)_
 
-## Introduction
+## Introdução
 
-In this exercise, you will learn how to debug ABAP backend code directly from **Visual Studio Code** using the built-in ABAP debugger. You will set breakpoints in the behavior pool **`ZBP_R_TRAVEL###`**, trigger the debugger from the Fiori elements App Preview, and inspect variables and call stacks — all without leaving Visual Studio Code.
+Neste exercício, você vai aprender a depurar (debug) código ABAP de backend diretamente do **Visual Studio Code**, usando o ABAP debugger integrado. Você vai definir breakpoints no behavior pool **`ZBP_R_TRAVEL###`**, disparar o debugger a partir do Fiori elements App Preview e inspecionar variáveis e call stacks, tudo sem sair do Visual Studio Code.
 
-### Exercises
+### Exercícios
 
-- [6.1 - Understand the Visual Studio Code Debugger for ABAP](#exercise-61-understand-the-visual-studio-code-debugger-for-abap)
-- [6.2 - Set Breakpoints in the implementation class](#exercise-62-set-breakpoints-in-the-implementation-class)
-- [6.3 - Trigger and Attach the Debugger](#exercise-63-trigger-and-attach-the-debugger)
-- [6.4 - Inspect Variables and Step Through Code](#exercise-64-inspect-variables-and-step-through-code)
-- [6.5 - Use the Watch View and Call Stack](#exercise-65-use-the-watch-view-and-call-stack)
-- [Summary](#summary)
+- [6.1 - Entender o Debugger do Visual Studio Code para ABAP](#exercício-61-entender-o-debugger-do-visual-studio-code-para-abap)
+- [6.2 - Definir Breakpoints na classe de implementação](#exercício-62-definir-breakpoints-na-classe-de-implementação)
+- [6.3 - Disparar e Anexar o Debugger](#exercício-63-disparar-e-anexar-o-debugger)
+- [6.4 - Inspecionar Variáveis e Percorrer o Código](#exercício-64-inspecionar-variáveis-e-percorrer-o-código)
+- [6.5 - Usar a Watch View e o Call Stack](#exercício-65-usar-a-watch-view-e-o-call-stack)
+- [Resumo](#resumo)
 
-> ℹ️ **Reminder**: Don't forget to replace all occurrences of the placeholder **`###`** with your group ID in the exercise steps below.
+> ℹ️ **Lembrete**: Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo nos passos do exercício abaixo.
 
 ---
 
-## About the ABAP Debugger in Visual Studio Code
+## Sobre o ABAP Debugger no Visual Studio Code
 
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Clique para expandir!</summary>
 
-The ADT for Visual Studio Code extension brings the full **ABAP debugger** into Visual Studio Code. The debugger connects to the ABAP backend and provides:
+A extensão ADT for Visual Studio Code traz o **ABAP debugger** completo para dentro do Visual Studio Code. O debugger se conecta ao backend ABAP e oferece:
 
-- **Breakpoints** set directly in the Visual Studio Code editor (click in the gutter next to the line number)
-- **Step Into / Step Over / Step Return / Continue** controls in the Debug toolbar
-- **Variables** panel — inspect local variables, parameters, and field symbols at runtime
-- **Watch** — monitor specific variables or expressions as you step through code
-- **Call Stack** — see the full call hierarchy and jump to any frame
-- **Logpoints** — print a message without stopping execution (no need to modify code)
+- **Breakpoints** definidos diretamente no editor do Visual Studio Code (clique na margem (gutter) ao lado do número da linha)
+- Controles **Step Into / Step Over / Step Return / Continue** na Debug toolbar
+- Painel **Variables**: inspecione variáveis locais, parâmetros e field symbols em tempo de execução
+- **Watch**: monitore variáveis ou expressões específicas enquanto percorre o código
+- **Call Stack**: veja a hierarquia completa de chamadas e salte para qualquer frame
+- **Logpoints**: imprima uma mensagem sem interromper a execução (sem precisar modificar o código)
 
-The debugger works with all ABAP object types supported by ADT for Visual Studio Code.
+O debugger funciona com todos os tipos de objeto ABAP suportados pelo ADT for Visual Studio Code.
 
-> **Further reading**: [Visual Studio Code Run and Debug Documentation](https://code.visualstudio.com/docs/editor/debugging)
+> **Leitura adicional**: [Documentação de Run and Debug do Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
 
-Here is an example of how debugging looks in Visual Studio Code — the steps below will walk you through this flow.
+Aqui está um exemplo de como é o debug no Visual Studio Code. Os passos abaixo vão guiar você por esse fluxo.
 
-![Debugging session overview](images/ex06_debug.gif)
+![Visão geral de uma sessão de debug](images/ex06_debug.gif)
 
 </details>
 
 ---
 
-## Exercise 6.1: Understand the Visual Studio Code Debugger for ABAP
-[^Top of page](#)
+## Exercício 6.1: Entender o Debugger do Visual Studio Code para ABAP
+[^Topo da página](#)
 
-> Get familiar with the **Run & Debug** view and its components before setting your first breakpoint.
+> Familiarize-se com a visão **Run & Debug** e seus componentes antes de definir o seu primeiro breakpoint.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. Open the **Run & Debug** view by clicking the bug/play icon in the **Activity Bar** (left edge of Visual Studio Code), or press **`Ctrl+Shift+D`** (macOS: **`Cmd+Shift+D`**).
+1. Abra a visão **Run & Debug** clicando no ícone de bug/play na **Activity Bar** (borda esquerda do Visual Studio Code), ou pressione **`Ctrl+Shift+D`** (macOS: **`Cmd+Shift+D`**).
 
-2. Review the panels visible in this view:
+2. Revise os painéis visíveis nesta visão:
 
-   | Panel | Purpose |
-   |-------|---------|
-   | **Variables** | Shows local variables, parameters, and their current values at a breakpoint |
-   | **Watch** | Monitor specific expressions or variable names you define |
-   | **Call Stack** | Shows the call hierarchy — click any frame to jump to that code location |
-   | **Breakpoints** | Lists all breakpoints set across your workspace; enable/disable individual ones |
+   | Painel | Finalidade |
+   |--------|------------|
+   | **Variables** | Mostra variáveis locais, parâmetros e seus valores atuais em um breakpoint |
+   | **Watch** | Monitora expressões ou nomes de variáveis que você definir |
+   | **Call Stack** | Mostra a hierarquia de chamadas; clique em qualquer frame para saltar para aquele ponto do código |
+   | **Breakpoints** | Lista todos os breakpoints definidos no seu workspace; habilite/desabilite cada um individualmente |
 
-3. The **Debug toolbar** appears at the top of the editor when a debug session is active:
+3. A **Debug toolbar** aparece no topo do editor quando uma sessão de debug está ativa:
 
-   | Button | Shortcut | Action |
-   |--------|----------|--------|
-   | Continue | **`F5`** | Run until the next breakpoint |
-   | Step Over | **`F10`** | Execute the current line and move to the next |
-   | Step Into | **`F11`** | Step into a called method |
-   | Step Return | **`Shift+F11`** | Run until the current method returns |
-   | Stop | **`Shift+F5`** | Terminate the debug session |
+   | Botão | Atalho | Ação |
+   |-------|--------|------|
+   | Continue | **`F5`** | Executa até o próximo breakpoint |
+   | Step Over | **`F10`** | Executa a linha atual e avança para a próxima |
+   | Step Into | **`F11`** | Entra em um método chamado |
+   | Step Return | **`Shift+F11`** | Executa até o método atual retornar |
+   | Stop | **`Shift+F5`** | Encerra a sessão de debug |
 
-   You can find more information [here](https://code.visualstudio.com/docs/debugtest/debugging)
+   Você pode encontrar mais informações [aqui](https://code.visualstudio.com/docs/debugtest/debugging)
 
 </details>
 
 ---
 
-## Exercise 6.2: Set Breakpoints in the implementation class
-[^Top of page](#)
+## Exercício 6.2: Definir Breakpoints na classe de implementação
+[^Topo da página](#)
 
-> Set breakpoints in the `validateCustomer` method of **`ZBP_R_TRAVEL###`** so you can inspect the validation logic at runtime.
+> Defina breakpoints no método `validateCustomer` de **`ZBP_R_TRAVEL###`** para poder inspecionar a lógica de validação em tempo de execução.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. Open the behavior pool **`ZBP_R_TRAVEL###`** using **`Ctrl+Shift+A`**.
+1. Abra o behavior pool **`ZBP_R_TRAVEL###`** usando **`Ctrl+Shift+A`**.
 
-2. Navigate to the **`validateCustomer`** method implementation. You can use the **Outline** view (left sidebar) to jump directly to it, or use **`Ctrl+Shift+O`** to go to a symbol in the file.
+2. Navegue até a implementação do método **`validateCustomer`**. Você pode usar a visão **Outline** (barra lateral esquerda) para ir direto a ele, ou usar **`Ctrl+Shift+O`** para ir a um símbolo no arquivo.
 
-3. **Set a breakpoint** on the first executable line inside `validateCustomer` (e.g., the `READ ENTITIES` statement):
-   - Click in the **gutter** — the narrow strip to the left of the line numbers.
-   - A red dot appears, indicating the breakpoint is set.
+3. **Defina um breakpoint** na primeira linha executável dentro de `validateCustomer` (por exemplo, a instrução `READ ENTITIES`):
+   - Clique na **margem (gutter)**, a faixa estreita à esquerda dos números de linha.
+   - Um ponto vermelho aparece, indicando que o breakpoint foi definido.
 
-   ![Breakpoint set in gutter](images/ex06_set_breakpoint.png)
+   ![Breakpoint definido na margem (gutter)](images/ex06_set_breakpoint.png)
 
-4. Set a second breakpoint a few lines later — for example, on the `LOOP AT travels` line — so you can step through the loop.
+4. Defina um segundo breakpoint algumas linhas depois, por exemplo na linha `LOOP AT travels`, para poder percorrer o loop passo a passo.
 
-5. Verify both breakpoints appear in the **Breakpoints** section of the **Run & Debug** view.
+5. Verifique se ambos os breakpoints aparecem na seção **Breakpoints** da visão **Run & Debug**.
 
-   > ℹ️ **Hint**: You can **disable** a breakpoint temporarily by clicking its red dot (turns grey). This lets you keep it without stopping every time. Right-click a breakpoint for more options (Edit Condition, Add Logpoint, etc.).
+   > ℹ️ **Dica**: Você pode **desabilitar** um breakpoint temporariamente clicando no ponto vermelho (ele fica cinza). Assim você o mantém sem parar a execução toda vez. Clique com o botão direito em um breakpoint para ver mais opções (Edit Condition, Add Logpoint etc.).
 
-   > ℹ️ **Logpoints**: Right-click in the gutter and select **Add Logpoint** to print a message to the Debug Console without stopping execution. Useful for tracing values without interrupting the app flow.
+   > ℹ️ **Logpoints**: Clique com o botão direito na margem (gutter) e selecione **Add Logpoint** para imprimir uma mensagem no Debug Console sem interromper a execução. Útil para rastrear valores sem interromper o fluxo do app.
 
 </details>
 
 ---
 
-## Exercise 6.3: Trigger and Attach the Debugger
-[^Top of page](#)
+## Exercício 6.3: Disparar e Anexar o Debugger
+[^Topo da página](#)
 
-> Launch a debug session and trigger your breakpoint by using the Travel app in the browser.
+> Inicie uma sessão de debug e dispare o seu breakpoint usando o app Travel no navegador.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
 
-### Trigger the breakpoints from the Fiori app
+### Disparar os breakpoints a partir do app Fiori
 
-4. Open (or refresh) the **Fiori elements App Preview**:
-   - Open the service binding **`ZUI_TRAVEL_O4###`** via **`Ctrl+Shift+A`**
-   - Select the **Travel** entity and click **Preview**
+4. Abra (ou atualize) o **Fiori elements App Preview**:
+   - Abra o service binding **`ZUI_TRAVEL_O4###`** via **`Ctrl+Shift+A`**
+   - Selecione a entidade **Travel** e clique em **Preview**
 
-5. In the app, click **Create** to start a new travel entry.
+5. No app, clique em **Create** para iniciar um novo registro de viagem.
 
-6. Fill in the fields — including a **Customer ID** (use any value, valid or not — e.g., `000001`).
+6. Preencha os campos, incluindo um **Customer ID** (use qualquer valor, válido ou não, por exemplo `000001`).
 
-7. Click **Save**.
+7. Clique em **Save**.
 
-8. The ABAP backend executes `validateCustomer` on save. Visual Studio Code **automatically comes to the foreground** and execution halts at your first breakpoint.
+8. O backend ABAP executa `validateCustomer` ao salvar. O Visual Studio Code **vem automaticamente para o primeiro plano** e a execução é interrompida no seu primeiro breakpoint.
 
 
 </details>
 
 ---
 
-## Exercise 6.4: Inspect Variables and Step Through Code
-[^Top of page](#)
+## Exercício 6.4: Inspecionar Variáveis e Percorrer o Código
+[^Topo da página](#)
 
-> Use the Variables panel and debug controls to inspect runtime data and step through the validation logic.
+> Use o painel Variables e os controles de debug para inspecionar os dados em tempo de execução e percorrer a lógica de validação passo a passo.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. With execution halted at the `READ ENTITIES` line, look at the **Variables** panel in the Run & Debug view.
+1. Com a execução interrompida na linha `READ ENTITIES`, observe o painel **Variables** na visão Run & Debug.
 
-   You will see local variables and parameters, including:
-   - `keys` — the internal table of Travel keys passed to the validation
-   - Any other method parameters
+   Você verá variáveis locais e parâmetros, incluindo:
+   - `keys`: a tabela interna de chaves de Travel passadas para a validação
+   - Quaisquer outros parâmetros do método
 
-2. **Expand** the `keys` variable by clicking the arrow. Inspect the individual key entries (UUID, etc.).
+2. **Expanda** a variável `keys` clicando na seta. Inspecione as entradas de chave individuais (UUID etc.).
 
-3. Press **`F10`** (Step Over) to execute the `READ ENTITIES` statement.
+3. Pressione **`F10`** (Step Over) para executar a instrução `READ ENTITIES`.
 
-4. After the step, the `travels` variable is now populated. Expand it in the Variables panel to see the Travel instances that were read, including the `CustomerID` field.
+4. Após o passo, a variável `travels` agora está preenchida. Expanda-a no painel Variables para ver as instâncias de Travel que foram lidas, incluindo o campo `CustomerID`.
 
-5. Press **`F10`** again to step over the customer `SELECT` statement. After it executes, inspect the `customers` internal table — it should contain the matching customer records (or be empty for an invalid ID).
+5. Pressione **`F10`** novamente para passar pela instrução `SELECT` do cliente. Depois que ela for executada, inspecione a tabela interna `customers`: ela deve conter os registros de cliente correspondentes (ou estar vazia para um ID inválido).
 
-6. Press **`F10`** to enter the `LOOP AT travels`. At each iteration, hover over `travel` in the code — Visual Studio Code shows a tooltip with the current value of that variable.
+6. Pressione **`F10`** para entrar no `LOOP AT travels`. A cada iteração, passe o mouse sobre `travel` no código: o Visual Studio Code mostra um tooltip com o valor atual dessa variável.
 
-   > ℹ️ **Hint**: You can hover over **any variable or field** in the editor while at a breakpoint to see its current runtime value in a tooltip.
+   > ℹ️ **Dica**: Você pode passar o mouse sobre **qualquer variável ou campo** no editor enquanto estiver em um breakpoint para ver o seu valor atual em tempo de execução em um tooltip.
 
-7. Press **`F5`** (Continue) to resume execution and let the app complete the save operation.
+7. Pressione **`F5`** (Continue) para retomar a execução e deixar o app concluir a operação de salvamento.
 
 </details>
 
 ---
 
-## Exercise 6.5: Use the Watch View and Call Stack
-[^Top of page](#)
+## Exercício 6.5: Usar a Watch View e o Call Stack
+[^Topo da página](#)
 
-> Add a Watch expression and inspect the call stack to understand the full execution context.
+> Adicione uma expressão Watch e inspecione o call stack para entender o contexto completo de execução.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-### Add a Watch expression
+### Adicionar uma expressão Watch
 
-1. Trigger the breakpoint again (create another Travel entry in the app and click Create).
+1. Dispare o breakpoint novamente (crie outro registro de Travel no app e clique em Create).
 
-2. In the **Variables** panel in the Run & Debug view, right-click on the variable that you want to add to the watch, then select **Add to Watch**.
+2. No painel **Variables** da visão Run & Debug, clique com o botão direito na variável que você deseja adicionar ao watch e selecione **Add to Watch**.
 
-3. The Watch panel now shows the selected variable as execution steps through the loop — without you having to expand the variable tree each time.
+3. O painel Watch agora mostra a variável selecionada conforme a execução avança pelo loop, sem que você precise expandir a árvore de variáveis a cada vez.
 
-   > ℹ️ **Hint**: You can add any valid ABAP field or expression as a Watch entry. Useful for monitoring deeply nested fields.
+   > ℹ️ **Dica**: Você pode adicionar qualquer campo ou expressão ABAP válida como entrada do Watch. É útil para monitorar campos muito aninhados.
 
-### Inspect the call stack
+### Inspecionar o call stack
 
-5. Look at the **Call Stack** panel. It shows the full call hierarchy that led to `validateCustomer`:
-   - The RAP framework trigger (determination/validation dispatcher)
-   - The behavior pool method `validateCustomer`
-   - Any called sub-methods
+5. Observe o painel **Call Stack**. Ele mostra a hierarquia completa de chamadas que levou a `validateCustomer`:
+   - O disparo do framework RAP (determination/validation dispatcher)
+   - O método `validateCustomer` do behavior pool
+   - Quaisquer submétodos chamados
 
-6. Click on any frame in the Call Stack to jump to that location in the code — the editor navigates to that file and line automatically.
+6. Clique em qualquer frame do Call Stack para saltar para aquele ponto no código: o editor navega automaticamente para o arquivo e a linha correspondentes.
 
 
-### End the debug session
+### Encerrar a sessão de debug
 
-7. Press **`Shift+F5`** (Stop) or click the red **Stop** button in the Debug toolbar to end the debug session.
+7. Pressione **`Shift+F5`** (Stop) ou clique no botão vermelho **Stop** na Debug toolbar para encerrar a sessão de debug.
 
-8. Your breakpoints remain set for future sessions — remove them by clicking the red dots in the gutter, or use **"Remove All Breakpoints"** from the Breakpoints panel context menu.
+8. Os seus breakpoints continuam definidos para sessões futuras. Remova-os clicando nos pontos vermelhos na margem (gutter), ou use **"Remove All Breakpoints"** no menu de contexto do painel Breakpoints.
 
 </details>
 
 ---
 
-## Summary
-[^Top of page](#)
+## Resumo
+[^Topo da página](#)
 
-In this exercise, you learned how to:
-- Navigate the **Run & Debug** view and understand its panels (Variables, Watch, Call Stack, Breakpoints)
-- Set **breakpoints** and **logpoints** directly in the Visual Studio Code editor gutter
-- Start an ABAP debug session and **trigger it from the Fiori elements App Preview**
-- **Step through ABAP code** using Step Over, Step Into, and Step Return
-- **Inspect runtime values** in the Variables panel and by hovering over variables in the editor
-- Use **Watch expressions** to monitor specific fields through loop iterations
-- Navigate the **Call Stack** to understand the execution context
+Neste exercício, você aprendeu a:
+- Navegar pela visão **Run & Debug** e entender seus painéis (Variables, Watch, Call Stack, Breakpoints)
+- Definir **breakpoints** e **logpoints** diretamente na margem (gutter) do editor do Visual Studio Code
+- Iniciar uma sessão de debug ABAP e **dispará-la a partir do Fiori elements App Preview**
+- **Percorrer o código ABAP passo a passo** usando Step Over, Step Into e Step Return
+- **Inspecionar valores em tempo de execução** no painel Variables e passando o mouse sobre variáveis no editor
+- Usar **expressões Watch** para monitorar campos específicos ao longo das iterações de um loop
+- Navegar pelo **Call Stack** para entender o contexto de execução
 
-These debugging skills apply to any ABAP object in your system — not just RAP behavior pools. Use the same approach for ABAP classes, function modules, and more.
+Essas habilidades de debug se aplicam a qualquer objeto ABAP do seu sistema, não apenas a behavior pools RAP. Use a mesma abordagem para classes ABAP, function modules e mais.
 
-You can continue with the other optional exercise:
-- **[Exercise 7: Create a Custom Agent](../ex07/README.md)**
+Você pode continuar com o outro exercício opcional:
+- **[Exercício 7: Criar um Custom Agent](../ex07/README.md)**
 
-**[↑ Back to Tutorial Home](../../README.md)**
+**[↑ Voltar ao início do tutorial](../../README.md)**
 
 ---

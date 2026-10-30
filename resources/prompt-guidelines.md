@@ -1,73 +1,73 @@
-# Prompt Guidelines for RAP130 💎
+# Diretrizes de Prompts para o RAP130 💎
 
-This file provides guidelines and example prompts for using a **coding agent with ADT MCP tools** (examples shown with GitHub Copilot) effectively during the RAP130 workshop.
-
----
-
-## General principles
-
-- Always specify the **object names** and **suffix `###`** explicitly in your prompt
-- Specify the **target package** when creating or generating objects
-- Allow MCP tool calls when Copilot requests them — review the parameters before approving
-- If a generation produces unexpected results, refine the prompt and try again
+Este arquivo traz diretrizes e exemplos de prompts para usar de forma eficaz um **coding agent com ADT MCP tools** (exemplos mostrados com o GitHub Copilot) durante o workshop RAP130.
 
 ---
 
-## Example prompts by exercise
+## Princípios gerais
+
+- Sempre especifique explicitamente os **nomes dos objetos** e o **sufixo `###`** no seu prompt
+- Especifique o **pacote de destino** ao criar ou gerar objetos
+- Permita as chamadas de MCP tools quando o Copilot solicitar, revisando os parâmetros antes de aprovar
+- Se uma geração produzir resultados inesperados, refine o prompt e tente novamente
+
+---
+
+## Exemplos de prompts por exercício
 
 
-### Exercise 2 — List generators
-
-```
-List all available ABAP RAP generators using the MCP tool.
-```
-
-### Exercise 2 — Run the RAP generator
-
-```
-Generate a transactional SAP Fiori app for travel management with DRAFT using the ABAP RAP generator.
-
-Use the following specification:
-- Package: ZRAP130_AI_###
-- Entity 1: Travel, based on the structure /DMO/TRAVEL_DATA
-- Entity 2: Booking, based on /DMO/BOOKING_DATA (child of Travel)
-- All generated object names should end with the suffix "###"
-```
-
-### Exercise 2 — Activate all objects
+### Exercício 2: Listar generators
 
 ```
-Activate all objects in package ZRAP130_AI_### using the MCP tool.
+Liste todos os ABAP RAP generators disponíveis usando a MCP tool.
+```
+
+### Exercício 2: Executar o RAP generator
+
+```
+Gere um app SAP Fiori transacional para gerenciamento de viagens com DRAFT usando o ABAP RAP generator.
+
+Use a seguinte especificação:
+- Pacote: ZRAP130_AI_###
+- Entidade 1: Travel, baseada na estrutura /DMO/TRAVEL_DATA
+- Entidade 2: Booking, baseada em /DMO/BOOKING_DATA (filha de Travel)
+- Todos os nomes de objetos gerados devem terminar com o sufixo "###"
+```
+
+### Exercício 2: Ativar todos os objetos
+
+```
+Ative todos os objetos do pacote ZRAP130_AI_### usando a MCP tool.
 ```
 
 
-### Exercise 4 — Implement validation
+### Exercício 4: Implementar a validação
 
 ```
-Add the validation validateCustomer. In its implementation, the method validate_customer from the ABAP ZCL_TRAVEL_HELPER_### should be used. Ask to review changes before proceeding with the activation
+Adicione a validação validateCustomer. Na sua implementação, deve ser usado o método validate_customer da classe ABAP ZCL_TRAVEL_HELPER_###. Peça para revisar as alterações antes de prosseguir com a ativação
 ```
 
-### Exercise 5 — Generate unit tests
+### Exercício 5: Gerar unit tests
 
 ```
-Generate ABAP unit tests for the local test class LTCL_TRAVEL_HELPER_### in the class ZCL_TRAVEL_HELPER_###.
-Create test methods for validate_customer (valid and invalid cases) and get_booking_status (Booked/New/Cancelled).
+Gere ABAP unit tests para a classe de teste local LTCL_TRAVEL_HELPER_### na classe ZCL_TRAVEL_HELPER_###.
+Crie métodos de teste para validate_customer (casos válidos e inválidos) e get_booking_status (Booked/New/Cancelled).
 ```
 
-### Exercise 5 — Run unit tests via MCP
+### Exercício 5: Executar unit tests via MCP
 
 ```
-Run ABAP unit tests for class ZCL_TRAVEL_HELPER_### using the MCP tool.
+Execute os ABAP unit tests da classe ZCL_TRAVEL_HELPER_### usando a MCP tool.
 ```
 
 ---
 
-## Tips for better MCP results
+## Dicas para obter melhores resultados com MCP
 
-| Tip | Why it helps |
-|-----|-------------|
-| Be explicit about object names | Avoids ambiguity when multiple objects match |
-| Specify the suffix `###` | Ensures generated artifacts don't collide with other participants |
-| Say "use the MCP tool" | Signals to your coding agent to prefer tool calls over code suggestions |
-| Allow all tool calls in sequence | Some operations (e.g., generate) require multiple tool calls |
-| Refresh the Visual Studio Code Explorer after generation | Press **F5** to see newly created objects |
+| Dica | Por que ajuda |
+|------|---------------|
+| Seja explícito sobre os nomes dos objetos | Evita ambiguidade quando vários objetos correspondem |
+| Especifique o sufixo `###` | Garante que os artefatos gerados não colidam com os de outros participantes |
+| Diga "use a MCP tool" | Sinaliza ao seu coding agent que deve preferir chamadas de tool a sugestões de código |
+| Permita todas as chamadas de tool em sequência | Algumas operações (por exemplo, generate) exigem várias chamadas de tool |
+| Atualize o Explorer do Visual Studio Code após a geração | Pressione **F5** para ver os objetos recém-criados |

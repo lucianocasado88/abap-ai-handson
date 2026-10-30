@@ -1,123 +1,123 @@
-[Home - RAP130 - Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers in Visual Studio Code](../../README.md)
+[Início - RAP130 - Crie Apps SAP Fiori com ABAP Cloud e SAP Joule for Developers no Visual Studio Code](../../README.md)
 
-# Exercise 7: Create a Custom Agent _(Optional)_
+# Exercício 7: Criar um Custom Agent _(Opcional)_
 
-## Introduction
+## Introdução
 
-In this exercise, you will create a **custom agent** to tailor your coding agent's behaviour for ABAP development in this workshop. A custom agent lets you define specific instructions, naming conventions, context, and tool preferences — so your agent behaves consistently without you having to repeat the same guidance in every prompt.
+Neste exercício, você vai criar um **custom agent** para adaptar o comportamento do seu coding agent ao desenvolvimento ABAP neste workshop. Um custom agent permite definir instruções específicas, convenções de nomenclatura, contexto e preferências de tools, para que o seu agente se comporte de forma consistente sem que você precise repetir a mesma orientação em cada prompt.
 
-For ABAP development with RAP130, a custom agent is useful for telling your coding agent to:
-- Always use the ADT MCP tools for ABAP operations
-- Follow RAP naming conventions and use the correct package/group ID
-- Keep ABAP code style consistent with ABAP Cloud restrictions
+Para o desenvolvimento ABAP com o RAP130, um custom agent é útil para instruir o seu coding agent a:
+- Sempre usar as ADT MCP tools nas operações ABAP
+- Seguir as convenções de nomenclatura RAP e usar o pacote/ID do grupo corretos
+- Manter o estilo do código ABAP consistente com as restrições do ABAP Cloud
 
-> ℹ️ **Note**: The steps in this exercise differ depending on which coding agent you are using:
-> - **GitHub Copilot** — use the built-in Visual Studio Code command to create the custom agent
-> - **Other coding agents** (e.g. Cursor, Cline, etc.) — create an `agent.md` file manually
+> ℹ️ **Nota**: Os passos deste exercício diferem conforme o coding agent que você está usando:
+> - **GitHub Copilot**: use o comando integrado do Visual Studio Code para criar o custom agent
+> - **Outros coding agents** (por exemplo, Cursor, Cline etc.): crie manualmente um arquivo `agent.md`
 
-The official documentation provides an [example of a custom agent for ABAP development](https://help.sap.com/docs/abap-cloud/abap-development-tools-for-visual-studio-code/agent-configuration?locale=en-US) that helps you get started.
+A documentação oficial traz um [exemplo de custom agent para desenvolvimento ABAP](https://help.sap.com/docs/abap-cloud/abap-development-tools-for-visual-studio-code/agent-configuration?locale=en-US) que ajuda você a começar.
 
-### Exercises
+### Exercícios
 
-- [7.1 - Create a Custom Agent (GitHub Copilot)](#exercise-71-create-a-custom-agent-github-copilot-)
-- [7.2 - Create a Custom Agent (Other Coding Agents)](#exercise-72-create-a-custom-agent-other-coding-agents-)
-- [Summary](#summary)
+- [7.1 - Criar um Custom Agent (GitHub Copilot)](#exercício-71-criar-um-custom-agent-github-copilot-)
+- [7.2 - Criar um Custom Agent (Outros Coding Agents)](#exercício-72-criar-um-custom-agent-outros-coding-agents-)
+- [Resumo](#resumo)
 
-> ℹ️ **Reminder**: Don't forget to replace all occurrences of the placeholder **`###`** with your group ID in the exercise steps below.
+> ℹ️ **Lembrete**: Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo nos passos do exercício abaixo.
 
 ---
 
-## Exercise 7.1: Create a Custom Agent (GitHub Copilot) 💎
-[^Top of page](#)
+## Exercício 7.1: Criar um Custom Agent (GitHub Copilot) 💎
+[^Topo da página](#)
 
-> Use the agent selector in GitHub Copilot Chat to create a custom agent for ABAP development.
+> Use o seletor de agentes do GitHub Copilot Chat para criar um custom agent para desenvolvimento ABAP.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. Open **GitHub Copilot Chat** (**`Ctrl+Shift+I`** / **`Cmd+Shift+I`**).
+1. Abra o **GitHub Copilot Chat** (**`Ctrl+Shift+I`** / **`Cmd+Shift+I`**).
 
-2. In the chat input bar, click the **agent selector icon** (`</>`) to open the agent dropdown.
+2. Na barra de entrada do chat, clique no **ícone do seletor de agentes** (`</>`) para abrir o menu de agentes.
 
-3. Select **"Configure Custom Agents..."** at the bottom of the list. Then click on **"+ Create new custom agent..."**
+3. Selecione **"Configure Custom Agents..."** no final da lista. Em seguida, clique em **"+ Create new custom agent..."**
 
-   ![Creating a custom agent in Visual Studio Code](images/ex7_create_custom_agent.gif)
+   ![Criando um custom agent no Visual Studio Code](images/ex7_create_custom_agent.gif)
 
-4. Visual Studio Code opens a new `agent.md` file for editing (stored in `.github/` in your workspace).
+4. O Visual Studio Code abre um novo arquivo `agent.md` para edição (armazenado em `.github/` no seu workspace).
 
-5. Replace the default content with instructions tailored for this RAP130 workshop. For example:
+5. Substitua o conteúdo padrão por instruções adaptadas a este workshop RAP130. Por exemplo:
 
    ```markdown
-   # ABAP RAP130 Custom Agent
+   # Custom Agent ABAP RAP130
 
-   You are an ABAP developer building a transactional SAP Fiori elements app using the RAP framework and the ADT MCP Server in Visual Studio Code.
+   Você é um desenvolvedor ABAP construindo um app SAP Fiori elements transacional usando o framework RAP e o ADT MCP Server no Visual Studio Code.
 
-   ## Rules
-   - Always use the ADT MCP tools (`abap_generators-*`, `abap_creation-create_object`, `abap_activate-objects`, etc.) for all ABAP backend operations — never generate ABAP code manually when an MCP tool can do it.
-   - My group ID suffix is `###`. Use this suffix in all artifact names (e.g., `ZRAP130_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
-   - Package for all objects: `ZRAP130_AI_###`.
+   ## Regras
+   - Sempre use as ADT MCP tools (`abap_generators-*`, `abap_creation-create_object`, `abap_activate-objects` etc.) para todas as operações de backend ABAP. Nunca gere código ABAP manualmente quando uma MCP tool puder fazer isso.
+   - O sufixo do meu ID do grupo é `###`. Use esse sufixo em todos os nomes de artefatos (por exemplo, `ZRAP130_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
+   - Pacote para todos os objetos: `ZRAP130_AI_###`.
    ```
 
-   > ℹ️ Replace `###` with your group ID in the agent instructions above.
+   > ℹ️ Substitua `###` pelo seu ID do grupo nas instruções do agente acima.
 
-6. **Save** the file (**`Ctrl+S`** / **`Cmd+S`**).
+6. **Salve** o arquivo (**`Ctrl+S`** / **`Cmd+S`**).
 
-7. Click the agent selector icon (`</>`) again — your new custom agent now appears in the list. Select it to activate it.
+7. Clique novamente no ícone do seletor de agentes (`</>`): o seu novo custom agent agora aparece na lista. Selecione-o para ativá-lo.
 
-   > ✅ Once selected, Copilot will apply the custom agent instructions automatically to every prompt.
+   > ✅ Depois de selecionado, o Copilot aplicará automaticamente as instruções do custom agent a todos os prompts.
 
 </details>
 
 ---
 
-## Exercise 7.2: Create a Custom Agent (Other Coding Agents) 💎
-[^Top of page](#)
+## Exercício 7.2: Criar um Custom Agent (Outros Coding Agents) 💎
+[^Topo da página](#)
 
-> Manually create an `agent.md` file to customise the behaviour of your coding agent (Cursor, Cline, or other MCP-compatible agents).
+> Crie manualmente um arquivo `agent.md` para personalizar o comportamento do seu coding agent (Cursor, Cline ou outros agentes compatíveis com MCP).
 
-> ℹ️ **About `agent.md`**: [`agent.md`](https://agents.md/) is an open standard for defining agent behaviour via a Markdown file. See [agents.md](https://agents.md/) for the full specification and examples.
+> ℹ️ **Sobre o `agent.md`**: o [`agent.md`](https://agents.md/) é um padrão aberto para definir o comportamento de agentes por meio de um arquivo Markdown. Veja [agents.md](https://agents.md/) para a especificação completa e exemplos.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. In Visual Studio Code, create a new file at the root of your workspace named **`agent.md`**.
+1. No Visual Studio Code, crie um novo arquivo na raiz do seu workspace chamado **`agent.md`**.
 
-   > ℹ️ **Hint**: Right-click the Explorer panel and select **New File**, then name it `agent.md`.
+   > ℹ️ **Dica**: Clique com o botão direito no painel Explorer, selecione **New File** e dê a ele o nome `agent.md`.
 
-2. Add instructions tailored for this RAP130 workshop. For example:
+2. Adicione instruções adaptadas a este workshop RAP130. Por exemplo:
 
    ```markdown
-   # ABAP RAP130 Custom Agent
+   # Custom Agent ABAP RAP130
 
-   You are an ABAP developer building a transactional SAP Fiori elements app using the ABAP RestFul Application  framework and the ADT MCP Server in Visual Studio Code.
+   Você é um desenvolvedor ABAP construindo um app SAP Fiori elements transacional usando o framework ABAP RESTful Application Programming Model e o ADT MCP Server no Visual Studio Code.
 
-   ## Rules
-   - Always use the ADT MCP tools (`abap_generators-*`, `abap_creation-create_object`, `abap_activate-objects`, etc.) for all ABAP backend operations — never generate ABAP code manually when an MCP tool can do it.
-   - My group ID suffix is `###`. Use this suffix in all artifact names (e.g., `ZRAP130_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
-   - Package for all objects: `ZRAP130_AI_###`.
+   ## Regras
+   - Sempre use as ADT MCP tools (`abap_generators-*`, `abap_creation-create_object`, `abap_activate-objects` etc.) para todas as operações de backend ABAP. Nunca gere código ABAP manualmente quando uma MCP tool puder fazer isso.
+   - O sufixo do meu ID do grupo é `###`. Use esse sufixo em todos os nomes de artefatos (por exemplo, `ZRAP130_AI_###`, `ZTRAVEL###`, `ZR_TRAVEL###`).
+   - Pacote para todos os objetos: `ZRAP130_AI_###`.
    ```
 
-   > ℹ️ Replace `###` with your group ID in the agent instructions above.
+   > ℹ️ Substitua `###` pelo seu ID do grupo nas instruções do agente acima.
 
-3. **Save** the file (**`Ctrl+S`** / **`Cmd+S`**).
+3. **Salve** o arquivo (**`Ctrl+S`** / **`Cmd+S`**).
 
-4. Open your coding agent and verify it picks up the `agent.md` file. The exact mechanism depends on your agent — consult its documentation for how it loads custom instructions.
+4. Abra o seu coding agent e verifique se ele carrega o arquivo `agent.md`. O mecanismo exato depende do seu agente; consulte a documentação dele para saber como ele carrega instruções personalizadas.
 
-   > ✅ Once loaded, your agent will apply these instructions automatically to every prompt.
+   > ✅ Depois de carregadas, o seu agente aplicará essas instruções automaticamente a todos os prompts.
 
 </details>
 
 ---
 
-## Summary
-[^Top of page](#)
+## Resumo
+[^Topo da página](#)
 
-In this exercise, you:
-- Created a custom agent definition to tailor your coding agent's behaviour for ABAP RAP development
-- Configured the agent with your group ID, package name, naming conventions, and a preference for ADT MCP tool use
+Neste exercício, você:
+- Criou uma definição de custom agent para adaptar o comportamento do seu coding agent ao desenvolvimento ABAP RAP
+- Configurou o agente com o seu ID do grupo, o nome do pacote, as convenções de nomenclatura e a preferência pelo uso das ADT MCP tools
 
-A custom agent saves time across all exercises: you no longer need to repeat context about your group ID, package, or RAP conventions in every prompt.
+Um custom agent economiza tempo em todos os exercícios: você não precisa mais repetir o contexto sobre o seu ID do grupo, o pacote ou as convenções RAP em cada prompt.
 
-**[↑ Back to Tutorial Home](../../README.md)**
+**[↑ Voltar ao início do tutorial](../../README.md)**
 
 ---

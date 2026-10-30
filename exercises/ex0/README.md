@@ -1,153 +1,151 @@
-[Home - RAP130 - Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers in Visual Studio Code](../../README.md)
+[Início - Hands On - SAP Inside Track Fortaleza 2026 - Crie Apps SAP Fiori utilizado IA Generativa](../../README.md)
 
-# Getting Started
+# Primeiros Passos
 
-## Introduction
+## Introdução
 
-Welcome to **RAP130**! Before building your SAP Fiori app, you need to set up your development environment in **Visual Studio Code** and connect it to your ABAP system.
+Bem-vindo ao **Hands On do SAP Inside Track Fortaleza**! Antes de construir o seu app SAP Fiori, você precisa configurar o seu ambiente de desenvolvimento no **Visual Studio Code** e conectá-lo ao seu sistema ABAP.
 
-In this exercise, you will install Visual Studio Code, install the ADT for Visual Studio Code extension, and establish a connection to your ABAP system.
+Neste exercício, você vai instalar o Visual Studio Code, instalar a extensão ADT for Visual Studio Code e estabelecer uma conexão com o seu sistema ABAP.
 
-### Exercises
+### Exercícios
 
-- [0.1 - Define your Group ID](#exercise-01-define-your-group-id)
-- [0.2 - Install Visual Studio Code](#exercise-02-install-visual-studio-code)
-- [0.3 - Install the ADT for Visual Studio Code Extension](#exercise-03-install-the-adt-for-visual-studio-code-extension)
-- [0.4 - Connect Visual Studio Code to Your ABAP Cloud System](#exercise-04-connect-visual-studio-code-to-your-abap-system)
-- [0.5 - Explore the Visual Studio Code User Interface for ABAP Development](#exercise-05-explore-the-visual-studio-code-user-interface-for-abap-development)
-- [Summary](#summary)
+- [0.1 - Defina o seu ID do grupo](#exercício-01-defina-o-seu-id-do-grupo)
+- [0.2 - Instalar o Visual Studio Code](#exercício-02-instalar-o-visual-studio-code)
+- [0.3 - Instalar a Extensão ADT for Visual Studio Code](#exercício-03-instalar-a-extensão-adt-for-visual-studio-code)
+- [0.4 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-04-conectar-o-visual-studio-code-ao-seu-sistema-abap)
+- [0.5 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-05-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
+- [Resumo](#resumo)
 
-> ℹ️ **Reminder**: You will define a **Group ID** in section 0.1. Don't forget to replace all occurrences of the placeholder **`###`** with your group ID throughout all exercises.
+> ℹ️ **Lembrete**: Você vai receber um **ID do grupo** na seção 0.1. Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo em todos os exercícios.
 
 ---
 
-## Exercise 0.1: Define your Group ID
-[^Top of page](#)
+## Exercício 0.1: Receba o seu ID do grupo
+[^Topo da página](#)
 
-> In this exercise, you will define a group ID that you will need throughout this workshop to uniquely identify your repository artifacts and avoid conflicts with other participants using the same system.
+> Neste exercício, você vai receber um ID do grupo que será usado ao longo de todo este workshop para identificar de forma única os artefatos do seu repositório e evitar conflitos com outros participantes que usam o mesmo sistema.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-As the ABAP environment is shared by many participants, every artifact you create follows a naming pattern using a personal suffix.
+Como o ambiente ABAP é compartilhado por muitos participantes, todo artefato que você criar segue um padrão de nomenclatura com um sufixo pessoal.
 
-You will find the placeholder **`###`** in all object names throughout the exercises. Replace it with your group ID.
+Você encontrará o placeholder **`###`** em todos os nomes de objetos ao longo dos exercícios. Substitua-o pelo seu ID do grupo.
 
-The group ID can contain **a maximum of 3 characters (numbers and/or letters)** — e.g. `123`, `XY1`, or `ABC`.
-
-**Check for already-used group IDs:**
-
-1. Once your Visual Studio Code is connected (see Exercise 0.4), open the **Command Palette** with **`Ctrl+Shift+P`** (macOS: **`Cmd+Shift+P`**).
-
-2. Type `>ABAP: Open Object` and press **Enter**.
-
-3. Search for **`zrap130_*###`**, replacing `###` with your chosen suffix. If results appear, the group ID is already taken — try another one.
-
-4. _No results_ means the group ID is available. Note it down and use it consistently throughout all exercises.
-
-> ⚠️ We **do not recommend** using group ID **`000`**. Choose your initials or a number combination that is unique to you.
-
-> ⚠️ For SAP-led workshops, a group ID **`###`** will be provided by the instructor.
+O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, por exemplo `123`, `XY1` ou `ABC`. Esse mesmo será definido pelo instrutor durante o Hands On.
 
 </details>
 
 ---
 
-## Exercise 0.2: Install Visual Studio Code
-[^Top of page](#)
+## Exercício 0.2: Instalar o Visual Studio Code
+[^Topo da página](#)
 
-> Download and install Visual Studio Code on your system if you have not already done so.
+> Faça o download e instale o Visual Studio Code no seu sistema, caso ainda não o tenha feito.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. Open a browser and go to [https://code.visualstudio.com/](https://code.visualstudio.com/).
+1. Abra um navegador e acesse [https://code.visualstudio.com/](https://code.visualstudio.com/).
 
-2. Download the installer for your operating system (Windows, macOS, or Linux).
+2. Baixe o instalador para o seu sistema operacional (Windows, macOS ou Linux).
 
-3. Run the installer and follow the on-screen instructions.
+3. Execute o instalador e siga as instruções na tela.
 
-4. Launch **Visual Studio Code** once installation is complete.
+4. Abra o **Visual Studio Code** assim que a instalação terminar.
 
-   > ℹ️ **Hint**: Ensure you are running a recent stable version of Visual Studio Code. Go to **Help > About** to check your version.
+   > ℹ️ **Dica**: Certifique-se de que você está usando uma versão estável recente do Visual Studio Code. Acesse **Help > About** para verificar a sua versão.
 
 </details>
 
 ---
 
-## Exercise 0.3: Install the ADT for Visual Studio Code Extension
-[^Top of page](#)
+## Exercício 0.3: Instalar a Extensão ADT for Visual Studio Code
+[^Topo da página](#)
 
-> Install the **ABAP Development Tools (ADT)** extension for Visual Studio Code from the Visual Studio Marketplace. This extension connects Visual Studio Code to your ABAP backend and includes the built-in **ADT MCP Server** that you will use in Exercise 1.
+> Instale a extensão **ABAP Development Tools (ADT)** para o Visual Studio Code a partir do Visual Studio Marketplace. Essa extensão conecta o Visual Studio Code ao seu backend ABAP e inclui o **ADT MCP Server** integrado, que você vai usar no Exercício 1.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-### Step 1: Install from the Visual Studio Code Marketplace
+### Passo 1: Instalar a partir do Visual Studio Code Marketplace
 
-1. Open **Visual Studio Code**.
+1. Abra o **Visual Studio Code**.
 
-2. Open the **Extensions** view:
-   - Press **`Ctrl+Shift+X`** (macOS: **`Cmd+Shift+X`**), or
-   - Click the **Extensions** icon in the Activity Bar (left edge)
+2. Abra a visão **Extensions**:
+   - Pressione **`Ctrl+Shift+X`** (macOS: **`Cmd+Shift+X`**), ou
+   - Clique no ícone **Extensions** na Activity Bar (borda esquerda)
 
-3. In the search bar, type:
+3. Na barra de pesquisa, digite:
    ```
    ABAP Development Tools
    ```
 
-4. Locate the **"ABAP Development Tools"** extension published by **SAP** and click **Install**.
+4. Localize a extensão **"ABAP Development Tools"** publicada pela **SAP** e clique em **Install**.
 
-5. Wait for the installation to complete.
+5. Aguarde a conclusão da instalação.
 
-   > ✅ **Success**: You should see "ABAP Development Tools" listed under **Installed** extensions.
+   > ✅ **Sucesso**: Você deve ver "ABAP Development Tools" listada entre as extensões **Installed**.
 
-   ![ADT Extension in Visual Studio Marketplace](images/ex0_adt_marketplace.png)
+   ![Extensão ADT no Visual Studio Marketplace](images/ex0_adt_marketplace.png)
 
-### Step 2: Verify the installation
+### Passo 2: Verificar a instalação
 
-1. Open the **Command Palette** (**`Ctrl+Shift+P`**) and type `ABAP`. You should see ABAP-specific commands such as:
+1. Abra o **Command Palette** (**`Ctrl+Shift+P`**) e digite `ABAP`. Você deve ver comandos específicos de ABAP, como:
    - `ABAP: New Destination...`
    - `ABAP: Open Object...`
    - `ABAP: Create New ABAP Object...`
    - `ABAP: Activate`
 
-   > ✅ If you see these commands, the extension is installed correctly.
+   > ✅ Se você vir esses comandos, a extensão foi instalada corretamente.
 
-   ![ADT Extension installed — ABAP commands visible in Command Palette](images/ex0_adt_installed.png)
+   ![Extensão ADT instalada: comandos ABAP visíveis no Command Palette](images/ex0_adt_installed.png)
 
 </details>
 
 ---
 
-## Exercise 0.4: Connect Visual Studio Code to Your ABAP System
-[^Top of page](#)
+## Exercício 0.4: Conectar o Visual Studio Code ao Seu Sistema ABAP
+[^Topo da página](#)
 
-> Create a **destination** in Visual Studio Code to connect to your ABAP system, then add it to your workspace.
+> Crie uma **destination** no Visual Studio Code para conectar ao seu sistema ABAP e depois adicione-a ao seu workspace.
 >
-> Choose the connection type that matches your system:
-> - **HTTP** — SAP BTP ABAP Environment or SAP S/4HANA Cloud Public Edition
-> - **RFC** — SAP S/4HANA on-premise or SAP S/4HANA Cloud Private Edition (requires SAP Logon configured on your machine)
+> Escolha o tipo de conexão que corresponde ao seu sistema:
+> - **HTTP**: SAP BTP ABAP Environment ou SAP S/4HANA Cloud Public Edition
+> - **RFC**: SAP S/4HANA on-premise ou SAP S/4HANA Cloud Private Edition (requer o SAP Logon configurado na sua máquina)
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-### Option A: HTTP destination (Cloud systems)
+### Opção A: Destination HTTP (sistemas Cloud)
 
-1. Open the **Command Palette** (**`Ctrl+Shift+P`**).
+1. Para obter o link do ambiente ABAP Trial, você deverá entrar no site https://cockpit.hanatrial.ondemand.com/trial/#/home/trial e clicar em **"Ir para a sua conta de avaliação"**
 
-2. Type `ABAP: New Destination` and select **"ABAP: New Destination..."**.
+![Tela inicial da página do cockpit BTP trial](images/ex0_cockpit_BTP_Trial_01.png)
 
-3. Select **HTTP** as the connection type.
+2. Clicar em **"default_abap-trial"**
 
-4. Enter the **system URL** of your ABAP Cloud system. The URL format is:
+![Tela cockpit BTP trial](images/ex0_cockpit_BTP_Trial_02.png)
+
+3. Pegar o endereço no browser da página que abriu até o .com. Ignorar o /ui#Shell-home. **Esse é o link do seu ambiente ABAP**.
+
+![Tela do ambiente ABAP Cloud](images/ex0_cockpit_abap_Trial_01.png)
+
+4. Agora acesse o seu **VS Code** e abra o **Command Palette** (**`Ctrl+Shift+P`**).
+
+5. Digite `ABAP: New Destination` e selecione **"ABAP: New Destination..."**.
+
+6. Selecione **HTTP** como tipo de conexão.
+
+7. Informe a **URL do sistema** ABAP Cloud. O formato da URL é:
    ```
    https://<system-id>.abap.<region>.hana.ondemand.com
    ```
 
-5. Press **Enter**, then enter a short **ID** for this destination (e.g., `BTP_DEV`).
+8. Pressione **Enter** e depois informe um **ID** curto para esta destination (por exemplo, `BTP_DEV`).
 
-6. Press **Enter**. The connection is established.
+9. Pressione **Enter**. A conexão é estabelecida.
 
    ```
    Command Palette → "ABAP: New Destination..."
@@ -158,30 +156,30 @@ The group ID can contain **a maximum of 3 characters (numbers and/or letters)** 
      ↓
    Destination ID → BTP_DEV
      ↓
-   ✅ Connection established!
+   ✅ Conexão estabelecida!
    ```
 
 ---
 
-### Option B: RFC destination (On-premise systems)
+### Opção B: Destination RFC (sistemas on-premise)
 
-> ℹ️ **Prerequisite**: Your system must be configured in **SAP Logon** (SAP GUI) with RFC connectivity before proceeding.
+> ℹ️ **Pré-requisito**: O seu sistema deve estar configurado no **SAP Logon** (SAP GUI) com conectividade RFC antes de prosseguir.
 
-1. Open the **Command Palette** (**`Ctrl+Shift+P`**).
+1. Abra o **Command Palette** (**`Ctrl+Shift+P`**).
 
-2. Type `ABAP: New Destination` and select **"ABAP: New Destination..."**.
+2. Digite `ABAP: New Destination` e selecione **"ABAP: New Destination..."**.
 
-3. Select **RFC** as the connection type.
+3. Selecione **RFC** como tipo de conexão.
 
-4. A list of systems from your **SAP Logon** configuration is displayed. Select your target system.
+4. É exibida uma lista de sistemas da sua configuração do **SAP Logon**. Selecione o sistema de destino.
 
-5. Enter your **username** and press **Enter**.
+5. Informe o seu **usuário** (username) e pressione **Enter**.
 
-6. Enter the **client number** (e.g., `100`) and press **Enter**.
+6. Informe o **número do client** (por exemplo, `100`) e pressione **Enter**.
 
-7. Enter your **login language** (e.g., `EN`) and press **Enter**.
+7. Informe o seu **idioma de logon** (por exemplo, `EN`) e pressione **Enter**.
 
-8. The connection is established.
+8. A conexão é estabelecida.
 
    ```
    Command Palette → "ABAP: New Destination..."
@@ -196,92 +194,92 @@ The group ID can contain **a maximum of 3 characters (numbers and/or letters)** 
      ↓
    Language → EN
      ↓
-   ✅ Connection established!
+   ✅ Conexão estabelecida!
    ```
 
 ---
 
-### Add the destination to your workspace
+### Adicionar a destination ao seu workspace
 
-> ⚠️ **Important**: This step is required to activate the ADT extension and to start the local MCP server in Exercise 1.
+> ⚠️ **Importante**: Este passo é necessário para ativar a extensão ADT e iniciar o MCP server local no Exercício 1.
 
-1. Open the **Command Palette** (**`Ctrl+Shift+P`**).
+1. Abra o **Command Palette** (**`Ctrl+Shift+P`**).
 
-2. Type `ABAP: Add Destination as Folder` and select **"ABAP: Add Destination as Folder to the Workspace..."**.
+2. Digite `ABAP: Add Destination as Folder` e selecione **"ABAP: Add Destination as Folder to the Workspace..."**.
 
-3. Select your newly created destination.
+3. Selecione a destination que você acabou de criar.
 
-4. For **HTTP** systems: a browser window opens — log in with your ABAP system credentials.  
-   For **RFC** systems: the connection is established immediately using your SAP Logon credentials.
+4. Para sistemas **HTTP**: uma janela do navegador é aberta, então faça login com as credenciais do seu sistema ABAP.  
+   Para sistemas **RFC**: a conexão é estabelecida imediatamente usando as suas credenciais do SAP Logon.
 
-5. After login, your system connection appears as a **folder** in the Visual Studio Code Explorer view (left sidebar).
+5. Após o login, a conexão com o seu sistema aparece como uma **pasta** na visão Explorer do Visual Studio Code (barra lateral esquerda).
 
 </details>
 
 ---
 
-## Exercise 0.5: Explore the Visual Studio Code User Interface for ABAP Development
-[^Top of page](#)
+## Exercício 0.5: Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP
+[^Topo da página](#)
 
-> Get familiar with the key Visual Studio Code areas you will use throughout this workshop.
+> Familiarize-se com as principais áreas do Visual Studio Code que você vai usar ao longo deste workshop.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-### Key UI areas for ABAP development
+### Principais áreas da interface para desenvolvimento ABAP
 
-| Area | Location | Purpose |
-|------|----------|---------|
-| **Activity Bar** | Far left | Switch between Explorer, Search, Source Control, Run & Debug, Extensions |
-| **Explorer (Workspace)** | Left sidebar | Navigate your ABAP system hierarchy — packages, object types, objects |
-| **Editor** | Center | Edit ABAP source code (classes, CDS views, behavior definitions, etc.) |
-| **Coding agent chat** (e.g. GitHub Copilot) | Right sidebar or panel | AI-powered chat — you will run MCP tool prompts here |
-| **Problems Panel** | Bottom | Syntax errors and warnings |
-| **Terminal** | Bottom | Integrated shell |
-| **Status Bar** | Very bottom | Current line/column, language, connected system |
+| Área | Local | Finalidade |
+|------|-------|------------|
+| **Activity Bar** | Extrema esquerda | Alternar entre Explorer, Search, Source Control, Run & Debug e Extensions |
+| **Explorer (Workspace)** | Barra lateral esquerda | Navegar pela hierarquia do seu sistema ABAP: pacotes, tipos de objeto e objetos |
+| **Editor** | Centro | Editar o código-fonte ABAP (classes, CDS views, behavior definitions etc.) |
+| **Chat do coding agent** (por exemplo, GitHub Copilot) | Barra lateral direita ou painel | Chat com IA: é aqui que você vai executar os prompts de MCP tools |
+| **Problems Panel** | Parte inferior | Erros de sintaxe e avisos |
+| **Terminal** | Parte inferior | Shell integrado |
+| **Status Bar** | Extremo inferior | Linha/coluna atual, linguagem, sistema conectado |
 
 
 
-### Essential keyboard shortcuts
+### Atalhos de teclado essenciais
 
-| Action | Windows/Linux | macOS |
-|--------|---------------|-------|
+| Ação | Windows/Linux | macOS |
+|------|---------------|-------|
 | Command Palette | **`Ctrl+Shift+P`** | **`Cmd+Shift+P`** |
-| Open ABAP Object | **`Ctrl+Shift+A`** | **`Cmd+Shift+A`** |
-| Create ABAP Object | **`Ctrl+Shift+Alt+N`** | **`Cmd+Shift+Option+N`** |
-| Activate object | **`Ctrl+F3`** | **`Cmd+F3`** |
-| Activate all inactive | **`Ctrl+Shift+F3`** | **`Cmd+Shift+F3`** |
-| Save | **`Ctrl+S`** | **`Cmd+S`** |
-| Find/Replace | **`Ctrl+H`** | **`Cmd+H`** |
-| Run ABAP Unit Tests | **`Ctrl+Shift+F10`** | **`Cmd+Shift+F10`** |
+| Abrir objeto ABAP | **`Ctrl+Shift+A`** | **`Cmd+Shift+A`** |
+| Criar objeto ABAP | **`Ctrl+Shift+Alt+N`** | **`Cmd+Shift+Option+N`** |
+| Ativar objeto | **`Ctrl+F3`** | **`Cmd+F3`** |
+| Ativar todos os inativos | **`Ctrl+Shift+F3`** | **`Cmd+Shift+F3`** |
+| Salvar | **`Ctrl+S`** | **`Cmd+S`** |
+| Localizar/Substituir | **`Ctrl+H`** | **`Cmd+H`** |
+| Executar ABAP Unit Tests | **`Ctrl+Shift+F10`** | **`Cmd+Shift+F10`** |
 
-> ℹ️ **Hint**: Use **Find/Replace** (**`Ctrl+H`**) to replace all occurrences of `###` with your group ID at once in any file.
+> ℹ️ **Dica**: Use **Find/Replace** (**`Ctrl+H`**) para substituir de uma só vez todas as ocorrências de `###` pelo seu ID do grupo em qualquer arquivo.
 
-### Navigating your ABAP system
+### Navegando pelo seu sistema ABAP
 
-1. In the **Explorer** view, expand the folder for your system connection.
+1. Na visão **Explorer**, expanda a pasta da conexão com o seu sistema.
 
-2. Navigate through the package hierarchy to find objects.
+2. Navegue pela hierarquia de pacotes para encontrar objetos.
 
-3. Use **`Ctrl+Shift+A`** to quickly open any object by name — you can use wildcards like `zrap130_*###`.
+3. Use **`Ctrl+Shift+A`** para abrir rapidamente qualquer objeto pelo nome. Você pode usar wildcards, como `zrap130_*###`.
 
-4. Objects with unsaved backend changes are marked **(L)** — they must be **activated** (**`Ctrl+F3`**) to become active in the system.
+4. Objetos com alterações no backend ainda não salvas são marcados com **(L)** e precisam ser **ativados** (**`Ctrl+F3`**) para ficarem ativos no sistema.
 
 </details>
 
 ---
 
-## Summary
-[^Top of page](#)
+## Resumo
+[^Topo da página](#)
 
-You have successfully:
-- Defined your group ID (`###`) for artifact naming
-- Installed Visual Studio Code
-- Installed the ADT for Visual Studio Code extension (which includes the ADT MCP Server)
-- Created an HTTP destination and connected Visual Studio Code to your ABAP Cloud system
-- Added the destination to your workspace and authenticated
-- Explored the key Visual Studio Code areas for ABAP development
+Você concluiu com sucesso:
+- A definição do seu ID do grupo (`###`) para a nomenclatura dos artefatos
+- A instalação do Visual Studio Code
+- A instalação da extensão ADT for Visual Studio Code (que inclui o ADT MCP Server)
+- A criação de uma destination HTTP e a conexão do Visual Studio Code ao seu sistema ABAP Cloud
+- A adição da destination ao seu workspace e a autenticação
+- A exploração das principais áreas do Visual Studio Code para desenvolvimento ABAP
 
-You can continue with the next exercise — **[Exercise 1: Enable the ADT MCP Server](../ex01/README.md)**
+Você pode continuar com o próximo exercício: **[Exercício 1: Habilitar o ADT MCP Server](../ex01/README.md)**
 
 ---

@@ -1,99 +1,99 @@
-[Home - RAP130 - Build SAP Fiori Apps with ABAP Cloud and SAP Joule for Developers in Visual Studio Code](../../README.md)
+[Início - RAP130 - Crie Apps SAP Fiori com ABAP Cloud e SAP Joule for Developers no Visual Studio Code](../../README.md)
 
-# Exercise 3: Publish and Preview the Travel App
+# Exercício 3: Publicar e Visualizar o App Travel
 
-## Introduction
+## Introdução
 
-In the previous exercise, you generated a complete transactional RAP UI service for Travel and Booking using your coding agent and the ADT MCP tools (_see [Exercise 2](../ex02/README.md)_).
+No exercício anterior, você gerou um UI service RAP transacional completo para Travel e Booking usando o seu coding agent e as ADT MCP tools (_veja o [Exercício 2](../ex02/README.md)_).
 
-In this exercise, you will publish the local service endpoint of your OData V4 service binding and open the **SAP Fiori elements App Preview** in a browser to see the running Travel application.
+Neste exercício, você vai publicar o endpoint local de serviço do seu service binding OData V4 e abrir o **SAP Fiori elements App Preview** em um navegador para ver o app Travel em funcionamento.
 
-### Exercises
+### Exercícios
 
-- [3.1 - Publish the Service Binding](#exercise-31-publish-the-service-binding)
-- [3.2 - Preview the Travel App in the Browser](#exercise-32-preview-the-travel-app-in-the-browser)
-- [3.3 - Create ABAP helper class](#exercise-33-create-abap-helper-class)
-- [Summary & Next Exercise](#summary--next-exercise)
+- [3.1 - Publicar o Service Binding](#exercício-31-publicar-o-service-binding)
+- [3.2 - Visualizar o App Travel no Navegador](#exercício-32-visualizar-o-app-travel-no-navegador)
+- [3.3 - Criar a classe ABAP auxiliar](#exercício-33-criar-a-classe-abap-auxiliar)
+- [Resumo e Próximo Exercício](#resumo-e-próximo-exercício)
 
-> ℹ️ **Reminder**: Don't forget to replace all occurrences of the placeholder **`###`** with your group ID in the exercise steps below.
+> ℹ️ **Lembrete**: Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo nos passos do exercício abaixo.
 
 ---
 
-## Exercise 3.1: Publish the Service Binding
-[^Top of page](#)
+## Exercício 3.1: Publicar o Service Binding
+[^Topo da página](#)
 
-> Publish the local service endpoint of the service binding **`ZUI_TRAVEL_O4###`** to make the OData service available for preview and consumption.
+> Publique o endpoint local de serviço do service binding **`ZUI_TRAVEL_O4###`** para tornar o OData service disponível para preview e consumo.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. Open the service binding using **`Ctrl+Shift+A`** and search for **`ZUI_TRAVEL_O4###`**. Select the entry with type **Service Binding** (SRVB).
+1. Abra o service binding usando **`Ctrl+Shift+A`** e pesquise por **`ZUI_TRAVEL_O4###`**. Selecione a entrada do tipo **Service Binding** (SRVB).
 
-2. Click the **Publish** button in the editor toolbar (top area of the service binding editor).
+2. Clique no botão **Publish** na barra de ferramentas do editor (área superior do editor do service binding).
 
-   > ℹ️ The "Publish" action registers a local service endpoint that allows the Fiori elements preview and external consumers to discover the service.
+   > ℹ️ A ação "Publish" registra um endpoint local de serviço que permite que o preview do Fiori elements e consumidores externos descubram o serviço.
 
-   ![Publish Service binding published](images/ex03_publish_service_binding.png)
+   ![Service binding publicado](images/ex03_publish_service_binding.png)
 
-4. Wait for the publishing to complete. 
+4. Aguarde a conclusão da publicação. 
 
-   > ✅ You should see on the bottom _Publish/unpublish action in progress_.
+   > ✅ Você deve ver na parte inferior a mensagem _Publish/unpublish action in progress_.
 
 </details>
 
 ---
 
-## Exercise 3.2: Preview the Travel App in the Browser
-[^Top of page](#)
+## Exercício 3.2: Visualizar o App Travel no Navegador
+[^Topo da página](#)
 
-> Open the SAP Fiori elements App Preview for the Travel entity.
+> Abra o SAP Fiori elements App Preview para a entidade Travel.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-1. Open your service binding **`ZUI_TRAVEL_O4###`** and click the **Preview** button.
+1. Abra o seu service binding **`ZUI_TRAVEL_O4###`** e clique no botão **Preview**.
 
-   ![Service binding preview](images/ex03_service_binding.png)
+   ![Preview do service binding](images/ex03_service_binding.png)
 
-2. Select the `Travel` entity then click **Open** from the pop-up dialog.
+2. Selecione a entidade `Travel` e clique em **Open** na caixa de diálogo.
    
-   ![Select entity](images/ex03_select_entity.png)
+   ![Selecionar entidade](images/ex03_select_entity.png)
 
-   A browser window opens with the **SAP Fiori elements App Preview** for your Travel application.
+   Uma janela do navegador é aberta com o **SAP Fiori elements App Preview** da sua aplicação Travel.
 
-2. Try creating a new `Travel` entity:
-   - Click **Create** and fill some fields: **Destination**, **Begin Date**, **End Date**
-   - Fill in **Agency ID** and **Customer ID** (use any valid IDs from the DMO flight reference data, e.g., `070001` for Agency, `000001` for Customer)
-   - Click **Save**
+2. Tente criar uma nova entidade `Travel`:
+   - Clique em **Create** e preencha alguns campos: **Destination**, **Begin Date**, **End Date**
+   - Preencha **Agency ID** e **Customer ID** (use quaisquer IDs válidos dos dados de referência de voo DMO, por exemplo `070001` para Agency e `000001` para Customer)
+   - Clique em **Save**
 
-   > ✅ If you can create and save a Travel entry, the app is working correctly!
+   > ✅ Se você conseguir criar e salvar um registro de Travel, o app está funcionando corretamente!
 
 </details>
 
 ---
 
-## Exercise 3.3: Create ABAP helper class
-[^Top of page](#)
+## Exercício 3.3: Criar a classe ABAP auxiliar
+[^Topo da página](#)
 
-> Create a helper class to populate the Travel and Booking database tables with demo data from the ABAP Flight Reference Scenario.
+> Crie uma classe auxiliar (helper class) para popular as tabelas de banco de dados de Travel e Booking com dados de demonstração do ABAP Flight Reference Scenario.
 
 <details>
-  <summary>🔵 Click to expand!</summary>
+  <summary>🔵 Clique para expandir!</summary>
 
-Loading demo data makes the app more interesting to work with in the remaining exercises.
+Carregar dados de demonstração torna o app mais interessante de usar nos demais exercícios.
 
-1. Open the **Command Palette** (**`Ctrl+Shift+P`**) and type `ABAP: Create new ABAP Object`or use **`Ctrl+Shift+Alt+N`** (macOS: **`Cmd+Option+Shift+N`**)  to create a new ABAP Class.
+1. Abra o **Command Palette** (**`Ctrl+Shift+P`**) e digite `ABAP: Create new ABAP Object`, ou use **`Ctrl+Shift+Alt+N`** (macOS: **`Cmd+Option+Shift+N`**), para criar uma nova classe ABAP.
 
    - Package: **`ZRAP130_AI_###`**
    - Name: **`ZCL_TRAVEL_HELPER_###`**
    - Description: **`Travel helper class ###`**
   
-   You can skip the entries for `Superclass` and `Interface`. The class **`ZCL_TRAVEL_HELPER_###`** should have been created successfully
+   Você pode deixar em branco os campos `Superclass` e `Interface`. A classe **`ZCL_TRAVEL_HELPER_###`** deve ter sido criada com sucesso
 
-   ![create ABAP Class](images/ex03_create_abap_class.png)
+   ![Criar classe ABAP](images/ex03_create_abap_class.png)
 
 
-2. Paste the following code into the class, replacing **`###`** with your group ID:
+2. Cole o código a seguir na classe, substituindo **`###`** pelo seu ID do grupo:
 
    ```ABAP
    CLASS zcl_travel_helper_### DEFINITION
@@ -123,21 +123,21 @@ Loading demo data makes the app more interesting to work with in the remaining e
    ENDCLASS.
    ```
 
-3. Save (**`Ctrl+S`**) and activate (**`Ctrl+F3`**) the class.
+3. Salve (**`Ctrl+S`**) e ative (**`Ctrl+F3`**) a classe.
 
 </details>
 
 ---
 
-## Summary & Next Exercise
-[^Top of page](#)
+## Resumo e Próximo Exercício
+[^Topo da página](#)
 
-Now that you've:
-- Published the local service endpoint of the service binding **`ZUI_TRAVEL_O4###`**
-- Opened and tested the SAP Fiori elements App Preview in the browser
-- Created a test travel entry to verify the app is working
-- Created a helper class for future use
+Agora que você:
+- Publicou o endpoint local de serviço do service binding **`ZUI_TRAVEL_O4###`**
+- Abriu e testou o SAP Fiori elements App Preview no navegador
+- Criou um registro de viagem de teste para verificar que o app está funcionando
+- Criou uma helper class para uso futuro
 
-You can continue with the next exercise — **[Exercise 4: Add a Validation](../ex04/README.md)**
+Você pode continuar com o próximo exercício: **[Exercício 4: Adicionar uma Validação](../ex04/README.md)**
 
 ---
