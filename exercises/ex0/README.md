@@ -12,14 +12,16 @@ Neste exercício, você vai instalar o Visual Studio Code, instalar a extensão 
 
 - [0.0 - Defina o seu ID do grupo](#exercício-00-defina-o-seu-id-do-grupo)
 - [0.1 - Instalar o Visual Studio Code](#exercício-01-instalar-o-visual-studio-code)
-- [0.2 - Instalar a Extensão ADT for Visual Studio Code](#exercício-02-instalar-a-extensão-adt-for-visual-studio-code)
-- [0.3 - Instalar a Extensão Cline no Visual Studio Code](#exercício-03-instalar-a-extensão-cline-no-visual-studio-code)
-- [0.4 - Criar ambiente ABAP Environment no SAP BTP Trial](#exercício-04-criar-ambiente-abap-environment-no-sap-btp-trial)
-- [0.5 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-05-conectar-o-visual-studio-code-ao-seu-sistema-abap)
-- [0.6 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-06-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
+- [0.2 - Configurar ambiente de desenvolvimento Node](#exercício-02-configurar-ambiente-de-desenvolvimento-node)
+- [0.3 - Instalar a Extensão ADT for Visual Studio Code](#exercício-03-instalar-a-extensão-adt-for-visual-studio-code)
+- [0.4 - Instalar a Extensão SAP Fiori Tools - Extension Pack no Visual Studio Code](#exercício-04-instalar-a-extensão-sap-fiori-tools-no-visual-studio-code)
+- [0.5 - Instalar a Extensão Cline no Visual Studio Code](#exercício-04-instalar-a-extensão-cline-no-visual-studio-code)
+- [0.6 - Criar ambiente ABAP Environment no SAP BTP Trial](#exercício-05-criar-ambiente-abap-environment-no-sap-btp-trial)
+- [0.7 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-06-conectar-o-visual-studio-code-ao-seu-sistema-abap)
+- [0.8 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-07-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
 - [Resumo](#resumo)
 
-> ℹ️ **Lembrete**: Você vai receber um **ID do grupo** na seção 0.1. Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo em todos os exercícios.
+> ℹ️ **Lembrete**: Você vai receber um **ID do grupo** na seção 0.0. Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo em todos os exercícios.
 
 ---
 
@@ -57,13 +59,37 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 4. Abra o **Visual Studio Code** assim que a instalação terminar.
 
-   > ℹ️ **Dica**: Certifique-se de que você está usando uma versão estável recente do Visual Studio Code. Acesse **Help > About** para verificar a sua versão.
+   > ℹ️ **Dica**: Certifique-se de que você está usando uma versão estável recente do Visual Studio Code. Acesse **Help > About** para verificar a sua versão. 
 
 </details>
 
 ---
 
-## Exercício 0.2: Instalar a Extensão ADT for Visual Studio Code
+## Exercício 0.2: Configurar ambiente de desenvolvimento Node
+[^Topo da página](#)
+
+> Siga os passos abaixo para configurar o Node ao seu ambiente de desenvolvimento (Visual Studio Code) local, caso ainda não o tenha feito.
+
+<details>
+  <summary>🔵 Clique para expandir!</summary>
+
+1. Abra um navegador e acesse [Node.js](https://nodejs.org).
+
+2. Baixe o instalador para o seu sistema operacional (Windows, macOS ou Linux).
+
+3. Execute o instalador e siga as instruções na tela.
+
+   Verifique se a instalação foi bem-sucedida no VS Code. Abra um Terminal no Visual Studio Code e digite 'node --version'.
+   
+   ![Comando node --version no Terminal Windows](images/ex0_node_installed.png)
+
+   > ℹ️ **Dica**: Certifique-se de que você está usando uma versão estável recente do Node.  o seguinte valor > ```v24.22.1```
+
+</details>
+
+---
+
+## Exercício 0.3: Instalar a Extensão ADT for Visual Studio Code
 [^Topo da página](#)
 
 > Instale a extensão **ABAP Development Tools (ADT)** para o Visual Studio Code a partir do Visual Studio Marketplace. Essa extensão conecta o Visual Studio Code ao seu backend ABAP e inclui o **ADT MCP Server** integrado, que você vai usar no Exercício 1.
@@ -100,7 +126,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
    - `ABAP: Create New ABAP Object...`
    - `ABAP: Activate`
 
-   > ✅ Se você vir esses comandos, a extensão foi instalada corretamente.
+   > ✅ Se você ver esses comandos, a extensão foi instalada corretamente.
 
    ![Extensão ADT instalada: comandos ABAP visíveis no Command Palette](images/ex0_adt_installed.png)
 
@@ -108,7 +134,51 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.3: Instalar a Extensão Cline no Visual Studio Code
+## Exercício 0.4: Instalar a Extensão SAP Fiori Tools - Extension Pack no Visual Studio Code
+[^Topo da página](#)
+
+> Instale a extensão **SAP Fiori Tools - Extension Pack** para o Visual Studio Code a partir do Visual Studio Marketplace. Essa extensão foi projetado para aumentar a eficiência no desenvolvimento de aplicativos SAP Fiori Elements.
+
+<details>
+  <summary>🔵 Clique para expandir!</summary>
+
+### Passo 1: Instalar a partir do Visual Studio Code Marketplace
+
+1. Abra o **Visual Studio Code**.
+
+2. Abra a visão **Extensions**:
+   - Pressione **`Ctrl+Shift+X`** (macOS: **`Cmd+Shift+X`**), ou
+   - Clique no ícone **Extensions** na Activity Bar (borda esquerda)
+
+3. Na barra de pesquisa, digite:
+   ```
+   SAP Fiori Tools - Extension Pack
+   ```
+
+4. Localize a extensão **"SAP Fiori Tools - Extension Pack"** publicada pela **SAP** e clique em **Install**.
+
+5. Aguarde a conclusão da instalação.
+
+   > ✅ **Sucesso**: Você deve ver "SAP Fiori Tools - Extension Pack" listada entre as extensões **Installed**.
+
+   ![Extensão SAP Fiori Tools - Extension Pack no Visual Studio Marketplace](images/ex0_fiori_marketplace.png)
+
+### Passo 2: Verificar a instalação
+
+1. Abra o **Command Palette** (**`Ctrl+Shift+P`**) e digite `ABAP`. Você deve ver comandos específicos de ABAP, como:
+   - `Fiori: Add Configuration for Variantes Creation...`
+   - `Fiori: Add Deployment Configuration...`
+   - `Fiori: Add Embedded Configuration for SAP Fiori Launchpad`
+
+   > ✅ Se você ver esses comandos, a extensão foi instalada corretamente.
+
+   ![Extensão ADT instalada: comandos ABAP visíveis no Command Palette](images/ex0_fiori_installed.png)
+
+</details>
+
+---
+
+## Exercício 0.5: Instalar a Extensão Cline no Visual Studio Code
 [^Topo da página](#)
 
 > Instale a extensão **Cline** para o Visual Studio Code a partir do Visual Studio Marketplace. Essa extensão permite que você converse com uma IA, gere código, edite arquivos e até execute comandos, sem a necessidade sair do seu espaço de trabalho (Visual Studio Code).
@@ -149,7 +219,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.4: Criar ambiente ABAP Environment no SAP BTP Trial
+## Exercício 0.6: Criar ambiente ABAP Environment no SAP BTP Trial
 [^Topo da página](#)
 
 <details>
@@ -163,7 +233,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.5: Conectar o Visual Studio Code ao Seu Sistema ABAP
+## Exercício 0.7: Conectar o Visual Studio Code ao Seu Sistema ABAP
 [^Topo da página](#)
 
 > Crie uma **destination** no Visual Studio Code para conectar ao seu sistema ABAP e depois adicione-a ao seu workspace.
@@ -287,7 +357,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.6: Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP
+## Exercício 0.8: Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP
 [^Topo da página](#)
 
 > Familiarize-se com as principais áreas do Visual Studio Code que você vai usar ao longo deste workshop.
