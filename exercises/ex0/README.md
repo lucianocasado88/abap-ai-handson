@@ -10,18 +10,20 @@ Neste exercício, você vai instalar o Visual Studio Code, instalar a extensão 
 
 ### Exercícios
 
-- [0.1 - Defina o seu ID do grupo](#exercício-01-defina-o-seu-id-do-grupo)
-- [0.2 - Instalar o Visual Studio Code](#exercício-02-instalar-o-visual-studio-code)
-- [0.3 - Instalar a Extensão ADT for Visual Studio Code](#exercício-03-instalar-a-extensão-adt-for-visual-studio-code)
-- [0.4 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-04-conectar-o-visual-studio-code-ao-seu-sistema-abap)
-- [0.5 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-05-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
+- [0.0 - Defina o seu ID do grupo](#exercício-00-defina-o-seu-id-do-grupo)
+- [0.1 - Instalar o Visual Studio Code](#exercício-01-instalar-o-visual-studio-code)
+- [0.2 - Instalar a Extensão ADT for Visual Studio Code](#exercício-02-instalar-a-extensão-adt-for-visual-studio-code)
+- [0.3 - Instalar a Extensão Cline no Visual Studio Code](#exercício-03-instalar-a-extensão-cline-no-visual-studio-code)
+- [0.4 - Criar ambiente ABAP Environment no SAP BTP Trial](#exercício-04-criar-ambiente-abap-environment-no-sap-btp-trial)
+- [0.5 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-05-conectar-o-visual-studio-code-ao-seu-sistema-abap)
+- [0.6 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-06-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
 - [Resumo](#resumo)
 
 > ℹ️ **Lembrete**: Você vai receber um **ID do grupo** na seção 0.1. Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo em todos os exercícios.
 
 ---
 
-## Exercício 0.1: Receba o seu ID do grupo
+## Exercício 0.0: Defina o seu ID do grupo
 [^Topo da página](#)
 
 > Neste exercício, você vai receber um ID do grupo que será usado ao longo de todo este workshop para identificar de forma única os artefatos do seu repositório e evitar conflitos com outros participantes que usam o mesmo sistema.
@@ -39,7 +41,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.2: Instalar o Visual Studio Code
+## Exercício 0.1: Instalar o Visual Studio Code
 [^Topo da página](#)
 
 > Faça o download e instale o Visual Studio Code no seu sistema, caso ainda não o tenha feito.
@@ -61,7 +63,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.3: Instalar a Extensão ADT for Visual Studio Code
+## Exercício 0.2: Instalar a Extensão ADT for Visual Studio Code
 [^Topo da página](#)
 
 > Instale a extensão **ABAP Development Tools (ADT)** para o Visual Studio Code a partir do Visual Studio Marketplace. Essa extensão conecta o Visual Studio Code ao seu backend ABAP e inclui o **ADT MCP Server** integrado, que você vai usar no Exercício 1.
@@ -106,7 +108,62 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.4: Conectar o Visual Studio Code ao Seu Sistema ABAP
+## Exercício 0.3: Instalar a Extensão Cline no Visual Studio Code
+[^Topo da página](#)
+
+> Instale a extensão **Cline** para o Visual Studio Code a partir do Visual Studio Marketplace. Essa extensão permite que você converse com uma IA, gere código, edite arquivos e até execute comandos, sem a necessidade sair do seu espaço de trabalho (Visual Studio Code).
+
+<details>
+  <summary>🔵 Clique para expandir!</summary>
+
+### Passo 1: Instalar a partir do Visual Studio Code Marketplace
+
+1. Abra o **Visual Studio Code**.
+
+2. Abra a visão **Extensions**:
+   - Pressione **`Ctrl+Shift+X`** (macOS: **`Cmd+Shift+X`**), ou
+   - Clique no ícone **Extensions** na Activity Bar (borda esquerda)
+
+3. Na barra de pesquisa, digite:
+   ```
+   Cline
+   ```
+
+4. Localize a extensão **"Cline"** publicada pela **Cline** e clique em **Install**.
+
+5. Aguarde a conclusão da instalação.
+
+   > ✅ **Sucesso**: Você deve ver "Cline" listada entre as extensões **Installed**.
+
+   ![Extensão Cline no Visual Studio Marketplace](images/ex0_cline_marketplace.png)
+
+### Passo 2: Verificar a instalação
+
+1. Na barra laterial esquerda do Visual Studio Code. Você deve ver o icone da extensão Cline:
+
+   > ✅ Se o icone estiver habilitado e ao clicar exibir um painel conforme abaixo, a extensão foi instalada corretamente.
+
+   ![Extensão Cline instalada: Chat bot habilitado](images/ex0_cline_installed.png)
+
+</details>
+
+---
+
+## Exercício 0.4: Criar ambiente ABAP Environment no SAP BTP Trial
+[^Topo da página](#)
+
+<details>
+  <summary>🔵 Clique para expandir!</summary>
+
+  1. Seguir o passo a passo do link abaixo da SAP, caso ainda não o tenha feito: 
+  
+      https://developers.sap.com/tutorials/abap-environment-trial-onboarding/#
+
+</details>
+
+---
+
+## Exercício 0.5: Conectar o Visual Studio Code ao Seu Sistema ABAP
 [^Topo da página](#)
 
 > Crie uma **destination** no Visual Studio Code para conectar ao seu sistema ABAP e depois adicione-a ao seu workspace.
@@ -124,28 +181,40 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ![Tela inicial da página do cockpit BTP trial](images/ex0_cockpit_BTP_Trial_01.png)
 
-2. Clicar em **"default_abap-trial"**
+2. Em seguida no menu a esquerda clique na opção **"Navegador de contas"**
 
-![Tela cockpit BTP trial](images/ex0_cockpit_BTP_Trial_02.png)
+![Tela cockpit BTP trial](images/ex0_cockpit_BTP_Trial_03.png)
 
-3. Pegar o endereço no browser da página que abriu até o .com. Ignorar o /ui#Shell-home. **Esse é o link do seu ambiente ABAP**.
+3. Ao carregar as informações do Cockpit, selecione a **"Subconta"** trial que foi criada no exercício anterior.
+
+![Tela cockpit BTP trial](images/ex0_cockpit_BTP_Trial_04.png)
+
+4. Na aba **"Geral"** clique na seção referente a **"Instâncias e assinaturas"**.
+
+![Tela cockpit BTP trial](images/ex0_cockpit_BTP_Trial_05.png)
+
+5. Em seguida, clique na aba **"Instâncias"** e escolha a instância criada para o **"ABAP Enviroment"**.
+
+![Tela cockpit BTP trial](images/ex0_cockpit_BTP_Trial_06.png)
+
+6. Pegue o endereço no browser da página que abriu até o .com. Ignorar o /ui#Shell-home. **Esse é o link do seu ambiente ABAP**.
 
 ![Tela do ambiente ABAP Cloud](images/ex0_cockpit_abap_Trial_01.png)
 
-4. Agora acesse o seu **VS Code** e abra o **Command Palette** (**`Ctrl+Shift+P`**).
+7. Agora acesse o seu **VS Code** e abra o **Command Palette** (**`Ctrl+Shift+P`**).
 
-5. Digite `ABAP: New Destination` e selecione **"ABAP: New Destination..."**.
+8. Digite `ABAP: New Destination` e selecione **"ABAP: New Destination..."**.
 
-6. Selecione **HTTP** como tipo de conexão.
+9. Selecione **HTTP** como tipo de conexão.
 
-7. Informe a **URL do sistema** ABAP Cloud. O formato da URL é:
+10. Informe a **URL do sistema** ABAP Cloud. O formato da URL é:
    ```
    https://<system-id>.abap.<region>.hana.ondemand.com
    ```
 
-8. Pressione **Enter** e depois informe um **ID** curto para esta destination (por exemplo, `BTP_DEV`).
+11. Pressione **Enter** e depois informe um **ID** curto para esta destination (por exemplo, `BTP_DEV`).
 
-9. Pressione **Enter**. A conexão é estabelecida.
+12. Pressione **Enter**. A conexão é estabelecida.
 
    ```
    Command Palette → "ABAP: New Destination..."
@@ -218,7 +287,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.5: Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP
+## Exercício 0.6: Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP
 [^Topo da página](#)
 
 > Familiarize-se com as principais áreas do Visual Studio Code que você vai usar ao longo deste workshop.
