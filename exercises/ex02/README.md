@@ -7,7 +7,7 @@
 No exercício anterior, você habilitou o ADT MCP Server e verificou que o seu coding agent consegue chamar as ADT MCP tools disponíveis (_veja o [Exercício 1](../ex01/README.md)_).
 
 Neste exercício, você vai usar **o seu coding agent em agent mode** junto com as ADT MCP tools para:
-1. Criar o seu pacote de desenvolvimento ABAP no ADT for Eclipse
+1. Criar o seu pacote de desenvolvimento ABAP no Visual Studio Code
 2. Gerar um app SAP Fiori transacional completo (RAP business object Travel + Booking) usando o ABAP Cloud Generator, tudo conduzido por prompts em linguagem natural no chat do coding agent
 
 ### Exercícios
@@ -43,40 +43,70 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 ## Exercício 2.1: Criar o Pacote ABAP
 [^Topo da página](#)
 
-> Crie o seu pacote do exercício **`ZSITFOR_AI_###`** no **ADT for Eclipse**. 
-
-> ℹ️ **Em breve**: A criação de pacotes diretamente a partir do Visual Studio Code estará disponível em uma próxima versão da extensão ADT for Visual Studio Code.
+> Crie o seu pacote do exercício **`ZSITFOR_AI_###`** no **Visual Studio Code**. 
 
 <details>
   <summary>🔵 Clique para expandir!</summary>
 
-1. Abra o **Eclipse ADT** e conecte ao seu sistema ABAP.
+> ℹ️ **Nota**: Os prints abaixo usam o ID do grupo **`000`** como exemplo. Substitua **`###`** pelo seu ID do grupo.
 
-2. No **Project Explorer**, expanda a conexão com o seu sistema e clique com o botão direito em **`ZLOCAL`** → **New → ABAP Package**.
+### Passo 1: Criar o pacote
 
-3. Preencha os detalhes do pacote:
-   - **Name**: `ZSITFOR_AI_###` (substitua `###` pelo seu ID do grupo)
-   - **Description**: `RAP AI Package ###`
-   - **Superpackage**: `ZLOCAL`
-   - **Package Type**: `Development`
+1. Abra o **Command Palette** com **`Ctrl+Shift+P`** (macOS: **`Cmd+Shift+P`**), digite `>abap` e selecione **ABAP: Create New ABAP Object...**.
 
-4. Clique em **Next** (ou **Finish**) e atribua o pacote a uma transport request, se for solicitado.
+   > 💡 **Dica**: Você também pode usar o atalho **`Ctrl+Shift+Alt+N`**.
 
-5. Verifique se o pacote **`ZSITFOR_AI_###`** aparece no Project Explorer sob `ZLOCAL`.
+   ![Command Palette: ABAP Create New ABAP Object](images/ex02_create_package_01.png)
 
-6. Volte para o **Visual Studio Code**. Você pode adicionar o pacote criado ao seu workspace.
+2. Na lista de tipos de objeto, digite `package` e selecione **Package** (Type: `DEVC/K`).
 
-   Abra o **Command Palette** com **`Ctrl+Shift+P`** (macOS: **`Cmd+Shift+P`**), digite `>ABAP: Add Package as Folder to Workspace` e pressione **Enter**.
+   ![Selecionar o tipo Package](images/ex02_create_package_02.png)
 
-   ![Adicionar pacote ao workspace](images/ex02_add_package_workspace.png)
+3. Em **Package Properties: Name (1/3)**, informe o nome do pacote e pressione **Enter**:
+   ```
+   ZSITFOR_AI_###
+   ```
 
-   Preencha com o nome do seu pacote `ZSITFOR_AI_###` e pressione **Enter**
+   ![Nome do pacote](images/ex02_create_package_03.png)
 
-   ![Adicionar pacote ao workspace](images/ex02_add_package_workspace_2.png)
+4. Em **Package Properties: Description (2/3)**, informe a descrição e pressione **Enter**:
+   ```
+   RAP AI Package ###
+   ```
 
-   O workspace deve ficar assim: 
-   
-   ![Estrutura do workspace](images/ex02_workspace_overview.png)
+   ![Descrição do pacote](images/ex02_create_package_04.png)
+
+5. Em **Package Properties: Super Package (3/3)**, informe **`ZLOCAL`** e pressione **Enter**.
+
+   ![Super package ZLOCAL](images/ex02_create_package_05.png)
+
+6. Em **Software Component**, o valor **`ZLOCAL`** já vem preenchido (somente leitura). Pressione **Enter** para continuar.
+
+   ![Software component ZLOCAL](images/ex02_create_package_06.png)
+
+7. O pacote é criado e o arquivo **`zsitfor_ai_###.devc.json`** é aberto no editor. No **Explorer**, o pacote aparece em **System Library → ZLOCAL → `ZSITFOR_AI_###`**.
+
+   > ✅ Se você vir o arquivo `.devc.json` com `"superPackage": "ZLOCAL"`, o pacote foi criado com sucesso!
+
+   ![Pacote criado](images/ex02_create_package_07.png)
+
+### Passo 2: Adicionar o pacote ao workspace
+
+1. Abra o **Command Palette** com **`Ctrl+Shift+P`** (macOS: **`Cmd+Shift+P`**), digite `>add` e selecione **ABAP: Add Package as Folder to Workspace...**.
+
+   ![Command Palette: ABAP Add Package as Folder to Workspace](images/ex02_add_package_workspace_01.png)
+
+2. Digite o nome do seu pacote **`ZSITFOR_AI_###`** e selecione-o na lista.
+
+   ![Selecionar o pacote](images/ex02_add_package_workspace_02.png)
+
+3. Confirme o nome da pasta do workspace (sugerido como `ZSITFOR_AI_### [nome da sua destination]`) pressionando **Enter**.
+
+   ![Nome da pasta no workspace](images/ex02_add_package_workspace_03.png)
+
+4. O pacote passa a aparecer como uma pasta própria no **Explorer**, contendo o arquivo `zsitfor_ai_###.devc.json`. É nessa pasta que os objetos gerados no Exercício 2.2 vão aparecer.
+
+   ![Pacote adicionado ao workspace](images/ex02_add_package_workspace_04.png)
 
 </details>
 
@@ -182,7 +212,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 [^Topo da página](#)
 
 Agora que você:
-- Criou o pacote ABAP **`ZSITFOR_AI_###`** no ADT for Eclipse
+- Criou o pacote ABAP **`ZSITFOR_AI_###`** no Visual Studio Code e o adicionou ao workspace
 - Gerou um UI service transacional RAP completo (Travel + Booking) via ADT MCP tools
 - Ativou todos os objetos gerados
 

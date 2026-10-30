@@ -25,10 +25,16 @@ Também vamos criar o App Fiori no padrão List Report + Object Page inteirament
 > Para concluir os exercícios práticos, você precisa de:
 > - **Visual Studio Code**: faça o download em [https://code.visualstudio.com/](https://code.visualstudio.com/).
 >
+> - **Node.js** (versão **22 ou superior**, recomendada a versão LTS): necessário para executar o Fiori MCP Server. Faça o download em [https://nodejs.org/](https://nodejs.org/).
+>
 > - **ADT for Visual Studio Code**: a extensão ADT for Visual Studio Code inclui o ADT MCP Server integrado. Aqui está o [link](https://marketplace.visualstudio.com/items?itemName=SAPSE.adt-vscode) para baixar a extensão. 
-> - **IMPORTANTE!** ℹ️ 
-  Uma extensão de **coding agent** no Visual Studio Code que suporte o virtual workspace filesystem do Visual Studio Code, necessária para chamar MCP tools e ler/editar arquivos ABAP. 
-  O **Cline** é o agente principal testado e o utilizado e recomendado neste tutorial. Porém cada usuário pode utilizar o seu agente preferido que tenha suporte a MCP local (Claude Code, Codex, Antigravity...).
+>
+> - **SAP Fiori Tools - Extension Pack**: conjunto de extensões para desenvolvimento de aplicativos SAP Fiori elements no Visual Studio Code. Aqui está o [link](https://marketplace.visualstudio.com/items?itemName=SAPSE.sap-ux-fiori-tools-extension-pack) para baixar a extensão.
+>
+> - **Cline**: extensão de **coding agent** para o Visual Studio Code, usada para chamar as MCP tools e ler/editar arquivos ABAP. Aqui está o [link](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) para baixar a extensão.
+>
+>   > ℹ️ **IMPORTANTE!** O **Cline** é o agente principal testado, utilizado e recomendado neste tutorial. Porém cada usuário pode utilizar o seu agente preferido, desde que suporte MCP local e o virtual workspace filesystem do Visual Studio Code (Claude Code, Codex, Antigravity...).
+>
 > - Acesso a um sistema **SAP BTP ABAP Environment**, **SAP S/4HANA Cloud Public Edition** ou **SAP S/4HANA Cloud Private Edition** que tenha o [ABAP Flight Reference Scenario](https://github.com/SAP-samples/abap-platform-refscen-flight) importado.
 >
 >   (*) Atualmente são suportados o SAP BTP ABAP environment, o SAP S/4HANA Cloud Public Edition e o SAP S/4HANA Cloud Private 2025 Edition.

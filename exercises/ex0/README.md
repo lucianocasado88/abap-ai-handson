@@ -14,11 +14,11 @@ Neste exercício, você vai instalar o Visual Studio Code, instalar a extensão 
 - [0.1 - Instalar o Visual Studio Code](#exercício-01-instalar-o-visual-studio-code)
 - [0.2 - Configurar ambiente de desenvolvimento Node](#exercício-02-configurar-ambiente-de-desenvolvimento-node)
 - [0.3 - Instalar a Extensão ADT for Visual Studio Code](#exercício-03-instalar-a-extensão-adt-for-visual-studio-code)
-- [0.4 - Instalar a Extensão SAP Fiori Tools - Extension Pack no Visual Studio Code](#exercício-04-instalar-a-extensão-sap-fiori-tools-no-visual-studio-code)
-- [0.5 - Instalar a Extensão Cline no Visual Studio Code](#exercício-04-instalar-a-extensão-cline-no-visual-studio-code)
-- [0.6 - Criar ambiente ABAP Environment no SAP BTP Trial](#exercício-05-criar-ambiente-abap-environment-no-sap-btp-trial)
-- [0.7 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-06-conectar-o-visual-studio-code-ao-seu-sistema-abap)
-- [0.8 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-07-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
+- [0.4 - Instalar a Extensão SAP Fiori Tools - Extension Pack no Visual Studio Code](#exercício-04-instalar-a-extensão-sap-fiori-tools---extension-pack-no-visual-studio-code)
+- [0.5 - Instalar a Extensão Cline no Visual Studio Code](#exercício-05-instalar-a-extensão-cline-no-visual-studio-code)
+- [0.6 - Criar ambiente ABAP Environment no SAP BTP Trial](#exercício-06-criar-ambiente-abap-environment-no-sap-btp-trial)
+- [0.7 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-07-conectar-o-visual-studio-code-ao-seu-sistema-abap)
+- [0.8 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-08-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
 - [Resumo](#resumo)
 
 > ℹ️ **Lembrete**: Você vai receber um **ID do grupo** na seção 0.0. Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo em todos os exercícios.
