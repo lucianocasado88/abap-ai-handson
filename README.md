@@ -2,9 +2,13 @@
 
 # Hands On - SAP Inside Track Fortaleza 2026 - Crie Apps SAP Fiori utilizado IA Generativa
 
-> 🌐 **Nota sobre esta material**
+> 🌐 **Nota sobre este material**
 >
-> Este material é uma adaptaçao do repositório original [SAP-samples/abap-platform-rap130](https://github.com/SAP-samples/abap-platform-rap130), para o hands-on do SAP Inside Track Fortaleza 2026 por Luciano Casado (GFX Consultoria). O conteúdo original é de autoria da SAP SE e de seus colaboradores.
+> Este material é uma adaptação do repositório original [SAP-samples/abap-platform-rap130](https://github.com/SAP-samples/abap-platform-rap130), licenciado sob a [Apache-2.0](LICENSE). Foi adaptado por Luciano Casado para o hands-on do SAP Inside Track Fortaleza 2026. O conteúdo original é de autoria da SAP SE e de seus colaboradores.
+>
+> **Principais alterações em relação ao original:** tradução para o português (Brasil), uso do Cline e do Claude Code no lugar do GitHub Copilot e novo fluxo de criação do app Fiori com o Fiori MCP Server.
+>
+> Este é um material da comunidade e **não é um material oficial da SAP**. SAP, SAP Fiori e SAP BTP são marcas registradas da SAP SE.
 
 ## Descrição
 
