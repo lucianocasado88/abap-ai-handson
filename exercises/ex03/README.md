@@ -22,6 +22,8 @@ Neste exercício, você vai publicar o endpoint local de serviço do seu service
 ## Exercício 3.1: Publicar o Service Binding
 [^Topo da página](#)
 
+> ℹ️ **Nota**: Por padrão, a ferramenta já publica o serviço automáticamente. Caso não tenha ativado, seguir os passos abaixo para ativar.
+
 > Publique o endpoint local de serviço do service binding **`ZUI_TRAVEL_O4###`** para tornar o OData service disponível para preview e consumo.
 
 <details>
@@ -75,55 +77,59 @@ Neste exercício, você vai publicar o endpoint local de serviço do seu service
 ## Exercício 3.3: Criar a classe ABAP auxiliar
 [^Topo da página](#)
 
-> Crie uma classe auxiliar (helper class) para popular as tabelas de banco de dados de Travel e Booking com dados de demonstração do ABAP Flight Reference Scenario.
+> Crie uma classe auxiliar (helper class) para validação de dados. Ela será utilizada nos próximos exercícios.
 
 <details>
-  <summary>🔵 Clique para expandir!</summary>
+  <summary>🔵 Cline - Clique para expandir!</summary>
 
 Carregar dados de demonstração torna o app mais interessante de usar nos demais exercícios.
 
-1. Abra o **Command Palette** (**`Ctrl+Shift+P`**) e digite `ABAP: Create new ABAP Object`, ou use **`Ctrl+Shift+Alt+N`** (macOS: **`Cmd+Option+Shift+N`**), para criar uma nova classe ABAP.
+1. No **Cline** (Act mode), copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
 
-   - Package: **`ZSITFOR_AI_###`**
-   - Name: **`ZCL_TRAVEL_HELPER_###`**
-   - Description: **`Travel helper class ###`**
-  
-   Você pode deixar em branco os campos `Superclass` e `Interface`. A classe **`ZCL_TRAVEL_HELPER_###`** deve ter sido criada com sucesso
+   ```
+   Criar uma classe ABAP com os seguintes parâmetros:
 
-   ![Criar classe ABAP](images/ex03_create_abap_class.png)
+   Package: ZSITFOR_AI_###
+   Name: ZCL_TRAVEL_HELPER_###
+   Description: Travel helper class ###
 
+   A classe terá dois métodos:
 
-2. Cole o código a seguir na classe, substituindo **`###`** pelo seu ID do grupo:
+   Método público validate_customer com um parâmetro de import com o nome iv_customer_id TYPE /dmo/customer_id e um parâmetro de retorno com o nome rv_exist do tipo abap_bool.
 
-   ```ABAP
-   CLASS zcl_travel_helper_### DEFINITION
-     PUBLIC
-     FINAL
-     CREATE PUBLIC.
-
-     PUBLIC SECTION.
-       METHODS: validate_customer
-                  IMPORTING iv_customer_id TYPE /dmo/customer_id
-                  RETURNING VALUE(rv_exists) TYPE abap_bool.
-
-     PROTECTED SECTION.
-     PRIVATE SECTION.
-   ENDCLASS.
-
-   CLASS zcl_travel_helper_### IMPLEMENTATION.
-
-     METHOD validate_customer.
-       SELECT SINGLE
-         FROM /dmo/customer
-         FIELDS @abap_true AS line_exists
-         WHERE customer_id = @iv_customer_id
-         INTO @rv_exists.
-     ENDMETHOD.
-
-   ENDCLASS.
+   Dentro do método validate_customer, deverá fazer um select single na tabela /dmo/customer onde o campo customer_id = parâmetro iv_customer_id. Caso tenha algum registro, deverá ser inserido no parâmetro de retorno rv_exist um abap_true. Caso contrário, abap_false.
    ```
 
-3. Salve (**`Ctrl+S`**) e ative (**`Ctrl+F3`**) a classe.
+   Ao final, a classe **`ZCL_TRAVEL_HELPER_###`** aparece no **Explorer** do Visual Studio Code, em **Source Code Library → Classes**.
+
+   ![Classe ABAP criada via MCP tool](images/ex03_cline_create_abap_class.png)
+
+2. Confirme que a classe está ativa. Se necessário, abra-a e ative com **`Ctrl+F3`**.
+
+</details>
+
+<details>
+  <summary>🔵 Claude Code - Clique para expandir!</summary>
+
+> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
+
+1. No **Claude Code**, copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
+
+   ```
+   Criar uma classe ABAP com os seguintes parâmetros:
+
+   Package: ZSITFOR_AI_###
+   Name: ZCL_TRAVEL_HELPER_###
+   Description: Travel helper class ###
+
+   A classe terá dois métodos:
+
+   Método público validate_customer com um parâmetro de import com o nome iv_customer_id TYPE /dmo/customer_id e um parâmetro de retorno com o nome rv_exist do tipo abap_bool.
+
+   Dentro do método validate_customer, deverá fazer um select single na tabela /dmo/customer onde o campo customer_id = parâmetro iv_customer_id. Caso tenha algum registro, deverá ser inserido no parâmetro de retorno rv_exist um abap_true. Caso contrário, abap_false.
+   ```
+
+2. Confirme que a classe está ativa. Se necessário, abra-a e ative com **`Ctrl+F3`**.
 
 </details>
 

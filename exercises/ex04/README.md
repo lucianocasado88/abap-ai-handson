@@ -12,6 +12,7 @@ Neste exercício, você vai usar **o seu coding agent em Agent mode** para defin
 
 - [4.1 - Definir e Implementar a Validação](#exercício-41-definir-e-implementar-a-validação)
 - [4.2 - Visualizar e Testar o App Travel Aprimorado](#exercício-42-visualizar-e-testar-o-app-travel-aprimorado)
+- [4.3 - Adicionar ajuda de pesquisa para campos de cliente, agencia e operador](#exercício-43-adicionar-ajuda-de-pesquisa-para-campos-de-cliente-agencia-e-operador)
 - [Resumo e Próximo Exercício](#resumo-e-próximo-exercício)
 
 > ℹ️ **Lembrete**: Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo nos passos do exercício abaixo.
@@ -21,19 +22,15 @@ Neste exercício, você vai usar **o seu coding agent em Agent mode** para defin
 ## Exercício 4.1: Definir e Implementar a Validação
 [^Topo da página](#)
 
-> Use o seu coding agent em Agent mode para declarar `validateCustomer` na behavior definition **`ZR_TRAVEL###`** e implementá-la em **`ZBP_R_TRAVEL###`** de uma só vez.
+> Use o seu coding agent para declarar `validateCustomer` na behavior definition **`ZR_TRAVEL###`** e implementá-la em **`ZBP_R_TRAVEL###`** de uma só vez.
 
 > ⚠ **Aviso sobre resultados gerados por IA** ⚠
 > Esteja ciente de que os resultados gerados por IA na descrição deste exercício podem diferir dos seus. **Sempre revise o código gerado antes de ativar.**
 
 <details>
-  <summary>🔵 Clique para expandir!</summary>
+  <summary>🔵 Cline - Clique para expandir!</summary>
 
-1. Abra a behavior definition **`ZR_TRAVEL###`** e vá para o **GitHub Copilot Chat** em **Agent mode**.
-
-   > 💡 **Dica (GitHub Copilot)**: Você pode começar no **Plan mode** para visualizar as alterações que o GitHub Copilot pretende fazer e depois mudar para o **Agent mode** para executá-las.
-
-2. Digite o seguinte prompt:
+1. No **Cline** (Act mode), copie e cole o prompt a seguir:
 
    ```
    Adicione a validação validateCustomer. Na sua implementação, deve ser usado o método validate_customer da classe ABAP ZCL_TRAVEL_HELPER_###. Peça para revisar as alterações antes de prosseguir com a ativação
@@ -41,74 +38,26 @@ Neste exercício, você vai usar **o seu coding agent em Agent mode** para defin
 
    > ℹ️ Substitua `###` pelo seu ID do grupo no prompt antes de enviá-lo.
 
-3. O seu coding agent vai propor alterações tanto na behavior definition quanto na classe de implementação. **Revise as alterações com atenção** antes de confirmar.
+   O Cline vai alterar tanto a behavior definition quanto a classe de implementação **`ZBP_R_TRAVEL###`**. **Revise as alterações com atenção** antes de confirmar a ativação.
 
-4. Confirme a ativação quando ele solicitar.
+   ![Validação validateCustomer definida e implementada pelo Cline](images/ex04_cline_add_validation.gif)
 
-   ![Copilot definindo e implementando a validação validateCustomer](images/ex04_add_validation.gif)
+</details>
 
-5. O seu código deve ficar parecido com este:
-  
-   > ℹ️ Não se esqueça de substituir **`###`** pelo seu *ID do grupo* atribuído ou pelo sufixo escolhido.
+<details>
+  <summary>🔵 Claude Code - Clique para expandir!</summary>
 
-   <details>
+> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
 
-      ```ABAP
-         CLASS LHC_ZR_TRAVEL### DEFINITION INHERITING FROM CL_ABAP_BEHAVIOR_HANDLER.
-            PRIVATE SECTION.
-               METHODS:
-                  GET_GLOBAL_AUTHORIZATIONS FOR GLOBAL AUTHORIZATION
-                  IMPORTING
-                     REQUEST requested_authorizations FOR Travel
-                  RESULT result,
-                  validateCustomer FOR VALIDATE ON SAVE
-                  IMPORTING keys FOR Travel~validateCustomer.
-         ENDCLASS.
+1. No **Claude Code**, copie e cole o prompt a seguir:
 
-         CLASS LHC_ZR_TRAVEL### IMPLEMENTATION.
-            METHOD GET_GLOBAL_AUTHORIZATIONS.
-            ENDMETHOD.
+   ```
+   Adicione a validação validateCustomer. Na sua implementação, deve ser usado o método validate_customer da classe ABAP ZCL_TRAVEL_HELPER_###. Peça para revisar as alterações antes de prosseguir com a ativação
+   ```
 
-            METHOD validateCustomer.
-               DATA(lo_travel_helper) = NEW zcl_travel_helper_###( ).
+   > ℹ️ Substitua `###` pelo seu ID do grupo no prompt antes de enviá-lo.
 
-               READ ENTITIES OF zr_travel### IN LOCAL MODE
-                  ENTITY Travel
-                  FIELDS ( CustomerID )
-                  WITH CORRESPONDING #( keys )
-                  RESULT DATA(lt_travel).
-
-               LOOP AT lt_travel INTO DATA(ls_travel).
-                  IF lo_travel_helper->validate_customer( ls_travel-CustomerID ) = abap_false.
-                  APPEND VALUE #( %tky = ls_travel-%tky ) TO failed-travel.
-                  APPEND VALUE #(
-                     %tky = ls_travel-%tky
-                     %msg = new_message_with_text(
-                        severity = if_abap_behv_message=>severity-error
-                        text     = |Customer { ls_travel-CustomerID } does not exist| ) )
-                     TO reported-travel.
-                  ENDIF.
-               ENDLOOP.
-            ENDMETHOD.
-         ENDCLASS.
-      ```
-   </details>
-
- 6. **OPCIONALMENTE**, você também pode experimentar implementar a validação `validateCustomer` usando o **Joule Predictive Code Completion**. Apenas certifique-se de que a configuração dele está habilitada.
-
-   ![Joule predictive code completion](/exercises/ex04/images/ex04_code_completion.gif)
-
-   - Abra o **Command Palette** com **`Ctrl+Shift+P`** (macOS: **`Cmd+Shift+P`**)
-   - Digite `Preferences: Open Settings (UI)` e selecione **Preferences: Open Settings...**.
-   - Na barra de pesquisa, digite:
-
-      ```
-      adt code completion
-      ```
-
-   - Localize a configuração **"Adt > Joule > Editor: Predictive Code Completion"** e **habilite-a** marcando a caixa de seleção.
-
-      ![Configuração do Joule predictive code completion](/exercises/ex04/images/ex04_code_completion_setting.png)
+   O Claude Code vai alterar tanto a behavior definition quanto a classe de implementação **`ZBP_R_TRAVEL###`**. **Revise as alterações com atenção** antes de confirmar a ativação.
 
 </details>
 
@@ -142,15 +91,64 @@ Neste exercício, você vai usar **o seu coding agent em Agent mode** para defin
 
 ---
 
+## Exercício 4.3: Adicionar ajuda de pesquisa para campos de cliente, agencia e operador
+[^Topo da página](#)
+
+> Use o seu coding agent para adicionar ajuda de pesquisa (value help) aos campos de cliente, agência e operador (companhia aérea) do app Travel.
+
+> ⚠ **Aviso sobre resultados gerados por IA** ⚠
+> Esteja ciente de que os resultados gerados por IA na descrição deste exercício podem diferir dos seus. **Sempre revise o código gerado antes de ativar.**
+
+<details>
+  <summary>🔵 Cline - Clique para expandir!</summary>
+
+1. No **Cline** (Act mode), copie e cole o prompt a seguir:
+
+   ```
+   Adicionar ajuda de pesquisa nos campos de cliente, agencia e operador no projeto do pacote ZSITFOR_AI_###. Para o campo de cliente, utilizar a CDS /DMO/I_Customer como base. Para o campo de agencia, utilizar a CDS /DMO/I_Agency como base. Para o campo de operador, utilizar a CDS /DMO/I_Carrier como base.
+   ```
+
+   > ℹ️ Substitua `###` pelo seu ID do grupo no prompt antes de enviá-lo.
+
+   O Cline vai alterar as CDS projection views, adicionando a anotação `@Consumption.valueHelpDefinition` nos campos de cliente, agência e operador (companhia aérea). **Revise as alterações com atenção** antes de confirmar a ativação.
+
+   ![Anotações de ajuda de pesquisa adicionadas pelo Cline](images/ex04_cline_value_help_result.png)
+
+2. Atualize o **Fiori elements App Preview** e abra a ajuda de pesquisa de um dos campos, por exemplo o **Customer ID**.
+
+   ![Ajuda de pesquisa do campo Customer ID](images/ex04_cline_value_help.gif)
+
+</details>
+
+<details>
+  <summary>🔵 Claude Code - Clique para expandir!</summary>
+
+> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
+
+1. No **Claude Code**, copie e cole o prompt a seguir:
+
+   ```
+   Adicionar ajuda de pesquisa nos campos de cliente, agencia e operador no projeto do pacote ZSITFOR_AI_###. Para o campo de cliente, utilizar a CDS /DMO/I_Customer como base. Para o campo de agencia, utilizar a CDS /DMO/I_Agency como base. Para o campo de operador, utilizar a CDS /DMO/I_Carrier como base.
+   ```
+
+   > ℹ️ Substitua `###` pelo seu ID do grupo no prompt antes de enviá-lo.
+
+   O Claude Code vai alterar as CDS projection views, adicionando a anotação `@Consumption.valueHelpDefinition` nos campos de cliente, agência e operador (companhia aérea). **Revise as alterações com atenção** antes de confirmar a ativação.
+
+2. Atualize o **Fiori elements App Preview** e abra a ajuda de pesquisa de um dos campos, por exemplo o **Customer ID**.
+
+</details>
+
+---
+
 ## Resumo e Próximo Exercício
 [^Topo da página](#)
 
 Agora que você:
 - Usou o seu coding agent em Agent mode para definir e implementar a validação `validateCustomer` em um único passo
 - Testou a validação no Fiori elements App Preview, confirmando que IDs de cliente inválidos são rejeitados
+- Adicionou ajuda de pesquisa aos campos de cliente, agência e operador
 
-você pode continuar com os exercícios opcionais:
-- **[Exercício 5: Gerar ABAP Unit Tests](../ex05/README.md)**
-- **[Exercício 6: Depurar Código ABAP no Visual Studio Code](../ex06/README.md)**
+você pode continuar com o próximo exercício: **[Exercício 5: Gerar o App SAP Fiori via Fiori MCP](../ex05/README.md)**
 
 ---
