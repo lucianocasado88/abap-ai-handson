@@ -102,7 +102,7 @@ Veja [ADT MCP Tools](https://help.sap.com/docs/abap-cloud/abap-development-tools
 
    ![Token MCP](images/ex1_mcp_adt_token.png)
 
-> ⚠️ **Importante**: Certifique-se de que a destination do seu sistema ainda está adicionada ao workspace (do Exercício 0.4). O MCP server só inicia quando há uma destination ativa no workspace.
+> ⚠️ **Importante**: Certifique-se de que a destination do seu sistema ainda está adicionada ao workspace (do Exercício 0.8). O MCP server só inicia quando há uma destination ativa no workspace.
 
 </details>
 
@@ -233,10 +233,35 @@ Se o ADT MCP Server não aparecer ou falhar ao iniciar:
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
 
-1. Para inicar a configuração, você precisa do token gerado automáticamente no VS Code. Falamos desse ponto no item 6 do tópico 1.1 (_veja_ [Exercício 1.1: Habilitar o ADT MCP Server nas Configurações do Visual Studio Code](#exercício-11-habilitar-o-adt-mcp-server-nas-configurações-do-visual-studio-code))
-1. Abra o **Claude Code** via terminal ou power shell:
-   - Digite o comand **`Ctrl+Shift+I`** na Activity Bar (esquerda), ou
-   - Pressione **`Ctrl+Shift+I`** (macOS: **`Cmd+Shift+I`**)
+1. Para iniciar a configuração, você precisa do token gerado automaticamente no Visual Studio Code. Falamos desse ponto no item 6 do tópico 1.1 (_veja_ [Exercício 1.1: Habilitar o ADT MCP Server nas Configurações do Visual Studio Code](#exercício-11-habilitar-o-adt-mcp-server-nas-configurações-do-visual-studio-code)).
+
+2. Abra um **terminal** (ou PowerShell no Windows) e execute o comando abaixo, substituindo **`<SEU_TOKEN>`** pelo token obtido no passo anterior:
+
+   ```bash
+   claude mcp add --transport http abap-adt http://localhost:2236/mcp --header "Authorization: Bearer <SEU_TOKEN>"
+   ```
+
+   > ℹ️ **Nota**: Esse comando registra o ADT MCP Server no Claude Code apenas para a pasta (projeto) em que você executou o comando. Para usá-lo em qualquer pasta, acrescente `-s user` logo após `claude mcp add`.
+
+   > ⚠️ **Atenção**: não grave o token em arquivos do projeto que possam ser enviados ao Git.
+
+3. Confirme que o servidor foi registrado:
+
+   ```bash
+   claude mcp list
+   ```
+
+   Você deve ver o **abap-adt** com o status ✓ **Connected**.
+
+   > ℹ️ O ADT MCP Server só responde enquanto o Visual Studio Code estiver aberto com a destination do seu sistema no workspace.
+
+4. Abra o **Claude Code** e digite o prompt a seguir para testar:
+
+   ```
+   Liste todos os ABAP RAP generators disponíveis usando a MCP tool.
+   ```
+
+   **Permita** a chamada da tool quando solicitado. Você deve ver uma lista de generators, incluindo uma entrada chamada **"OData UI Service from Scratch"**.
 
 </details>
 

@@ -70,7 +70,7 @@ Neste exercício, você vai usar **o seu coding agent** junto com o **Fiori MCP 
 
 3. No campo **URL**, informe o link do seu ambiente **ABAP Trial** do SAP BTP.
 
-   > ℹ️ **Dica**: Esse é o mesmo endereço que você obteve no [Exercício 0.7](../ex0/README.md#exercício-07-conectar-o-visual-studio-code-ao-seu-sistema-abap) (a URL do ambiente, até o `.com`, sem o `/ui#Shell-home`).
+   > ℹ️ **Dica**: Esse é o mesmo endereço que você obteve no [Exercício 0.8](../ex0/README.md#exercício-08-conectar-o-visual-studio-code-ao-seu-sistema-abap) (a URL do ambiente, até o `.com`, sem o `/ui#Shell-home`).
 
    > ⚠️ **Atenção**: o endereço copiado do navegador traz **`-web`** logo depois de `.abap`. Para esta conexão, **remova o `-web`** da URL, deixando apenas `.abap.`. Exemplo fictício:
    >
@@ -126,8 +126,6 @@ Neste exercício, você vai usar **o seu coding agent** junto com o **Fiori MCP 
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
 
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
-
 1. No **Claude Code**, copie e cole o prompt a seguir:
 
    ```
@@ -170,8 +168,6 @@ Execute o prompt abaixo **na janela do projeto ABAP RAP** (a janela onde está o
 
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
-
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
 
 1. No **Claude Code**, na janela do projeto ABAP RAP, copie e cole o prompt a seguir:
 
@@ -222,8 +218,6 @@ Execute o prompt abaixo **na janela do projeto ABAP RAP** (a janela onde está o
 
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
-
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
 
 1. Na **janela do projeto Fiori** (a que você abriu no Exercício 5.1), no **Claude Code**, copie e cole o prompt a seguir:
 
@@ -284,5 +278,7 @@ Agora que você:
 - Executou o preview do app e o testou no navegador
 
 a partir daqui você pode customizar o front end do app usando o Fiori MCP Server.
+
+Você também pode continuar com o exercício opcional: **[Exercício 6: Criar um Custom Agent](../ex06/README.md)**
 
 ---

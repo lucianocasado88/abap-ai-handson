@@ -16,9 +16,10 @@ Neste exercício, você vai instalar o Visual Studio Code, instalar a extensão 
 - [0.3 - Instalar a Extensão ADT for Visual Studio Code](#exercício-03-instalar-a-extensão-adt-for-visual-studio-code)
 - [0.4 - Instalar a Extensão SAP Fiori Tools - Extension Pack no Visual Studio Code](#exercício-04-instalar-a-extensão-sap-fiori-tools---extension-pack-no-visual-studio-code)
 - [0.5 - Instalar a Extensão Cline no Visual Studio Code](#exercício-05-instalar-a-extensão-cline-no-visual-studio-code)
-- [0.6 - Criar ambiente ABAP Environment no SAP BTP Trial](#exercício-06-criar-ambiente-abap-environment-no-sap-btp-trial)
-- [0.7 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-07-conectar-o-visual-studio-code-ao-seu-sistema-abap)
-- [0.8 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-08-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
+- [0.6 - Configurar o Cline](#exercício-06-configurar-o-cline)
+- [0.7 - Criar ambiente ABAP Environment no SAP BTP Trial](#exercício-07-criar-ambiente-abap-environment-no-sap-btp-trial)
+- [0.8 - Conectar o Visual Studio Code ao Seu Sistema ABAP Cloud](#exercício-08-conectar-o-visual-studio-code-ao-seu-sistema-abap)
+- [0.9 - Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP](#exercício-09-explorar-a-interface-do-visual-studio-code-para-desenvolvimento-abap)
 - [Resumo](#resumo)
 
 > ℹ️ **Lembrete**: Você vai receber um **ID do grupo** na seção 0.0. Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo em todos os exercícios.
@@ -219,7 +220,62 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.6: Criar ambiente ABAP Environment no SAP BTP Trial
+## Exercício 0.6: Configurar o Cline
+[^Topo da página](#)
+
+> Configure o Cline para usar o modelo de IA do **SAP AI Core**, com as credenciais da chave enviada por e-mail, e defina o idioma para português.
+
+> ℹ️ **Pré-requisito**: tenha em mãos a **chave de serviço (service key) do SAP AI Core** que foi enviada por e-mail.
+>
+> ⚠️ **Atenção**: não compartilhe nem publique essa chave. Ela contém credenciais de acesso (`clientid` e `clientsecret`).
+
+<details>
+  <summary>🔵 Clique para expandir!</summary>
+
+### Passo 1: Abrir as configurações do Cline
+
+1. Na barra lateral esquerda do Visual Studio Code, clique no **ícone do Cline**.
+
+   ![Ícone do Cline na barra lateral](images/ex0_cline_config_01.png)
+
+2. No canto superior direito da janela do Cline, clique no **ícone de engrenagem** (_Settings_).
+
+   ![Ícone de engrenagem do Cline](images/ex0_cline_config_02.png)
+
+### Passo 2: Configurar o provedor de API
+
+3. Na aba **API Configuration**, preencha os campos abaixo, usando os valores da chave enviada por e-mail:
+
+   | Campo no Cline | Valor |
+   |---|---|
+   | **API Provider** | `SAP AI Core` |
+   | **AI Core Client Id** | valor do campo `clientid` da chave |
+   | **AI Core Client Secret** | valor do campo `clientsecret` da chave |
+   | **AI Core Base URL** | valor do campo `AI_API_URL` da chave |
+   | **AI Core Auth URL** | valor do campo `url` da chave |
+   | **AI Core Resource Group** | `default` |
+
+4. Marque a caixa de seleção **Orchestration Mode**.
+
+5. Em **Model**, escolha **`anthropic--claude-4.8-opus`**.
+
+   ![Configuração da API do Cline com SAP AI Core](images/ex0_cline_config_03.png)
+
+### Passo 3: Definir o idioma
+
+6. No menu lateral das configurações, clique no ícone **General Settings**.
+
+7. Em **Preferred Language**, selecione **Portuguese - Português (Brasil)**.
+
+   ![General Settings do Cline: idioma preferido](images/ex0_cline_config_04.png)
+
+8. Clique em **Done** para concluir.
+
+</details>
+
+---
+
+## Exercício 0.7: Criar ambiente ABAP Environment no SAP BTP Trial
 [^Topo da página](#)
 
 <details>
@@ -233,7 +289,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.7: Conectar o Visual Studio Code ao Seu Sistema ABAP
+## Exercício 0.8: Conectar o Visual Studio Code ao Seu Sistema ABAP
 [^Topo da página](#)
 
 > Crie uma **destination** no Visual Studio Code para conectar ao seu sistema ABAP e depois adicione-a ao seu workspace.
@@ -357,7 +413,7 @@ O ID do grupo pode conter **no máximo 3 caracteres (números e/ou letras)**, po
 
 ---
 
-## Exercício 0.8: Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP
+## Exercício 0.9: Explorar a Interface do Visual Studio Code para Desenvolvimento ABAP
 [^Topo da página](#)
 
 > Familiarize-se com as principais áreas do Visual Studio Code que você vai usar ao longo deste workshop.
@@ -415,6 +471,7 @@ Você concluiu com sucesso:
 - A definição do seu ID do grupo (`###`) para a nomenclatura dos artefatos
 - A instalação do Visual Studio Code
 - A instalação da extensão ADT for Visual Studio Code (que inclui o ADT MCP Server)
+- A configuração do Cline com o SAP AI Core e o idioma português
 - A criação de uma destination HTTP e a conexão do Visual Studio Code ao seu sistema ABAP Cloud
 - A adição da destination ao seu workspace e a autenticação
 - A exploração das principais áreas do Visual Studio Code para desenvolvimento ABAP
