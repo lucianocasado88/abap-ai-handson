@@ -1,4 +1,4 @@
-[Início - Hands On - SAP Inside Track Fortaleza 2026 - Crie Apps SAP Fiori utilizado IA Generativa)](https://github.com/lucianocasado88/abap-ai-handson)
+[Início - Hands On - SAP Inside Track Fortaleza 2026 - Crie Apps SAP Fiori utilizado IA Generativa](https://github.com/lucianocasado88/abap-ai-handson)
 
 # Hands On - SAP Inside Track Fortaleza 2026 - Crie Apps SAP Fiori utilizado IA Generativa
 
