@@ -78,14 +78,13 @@ Siga estes passos para construir um app SAP Fiori usando o ADT MCP Server / Fior
 | [Exercício 2: Gerar o serviço oData no modelo RAP para o App SAP Fiori via MCP Tools](exercises/ex02/README.md)| -- |
 | [Exercício 3: Publicar e Visualizar o App Travel via oData UI Metadata](exercises/ex03/README.md)| -- |
 | [Exercício 4: Adicionar uma Validação](exercises/ex04/README.md)| -- |
-| [Exercício 5: Gerar ABAP Unit Tests](exercises/ex05/README.md) | -- | 
+| [Exercício 5: Gerar o App SAP Fiori via Fiori MCP](exercises/ex05/README.md) | -- | 
 
 #### Exercícios Opcionais
 
 | Exercícios | -- |
 | ------------- | -- | 
-| [Exercício 6: Depurar Código ABAP no Visual Studio Code](exercises/ex06/README.md) | -- | 
-| [Exercício 7: Criar um Custom Agent](exercises/ex07/README.md) | -- | 
+| [Exercício 6: Criar um Custom Agent](exercises/ex06/README.md) | -- | 
 
 ## Mais informações
 

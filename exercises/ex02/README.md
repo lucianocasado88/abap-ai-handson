@@ -7,13 +7,17 @@
 No exercício anterior, você habilitou o ADT MCP Server e verificou que o seu coding agent consegue chamar as ADT MCP tools disponíveis (_veja o [Exercício 1](../ex01/README.md)_).
 
 Neste exercício, você vai usar **o seu coding agent em agent mode** junto com as ADT MCP tools para:
-1. Criar o seu pacote de desenvolvimento ABAP no Visual Studio Code
-2. Gerar um app SAP Fiori transacional completo (RAP business object Travel + Booking) usando o ABAP Cloud Generator, tudo conduzido por prompts em linguagem natural no chat do coding agent
+1. Criar o seu pacote de desenvolvimento ABAP
+2. Adicionar o pacote ao workspace do Visual Studio Code
+3. Gerar um app SAP Fiori transacional completo (RAP business object Travel + Booking) usando o ABAP Cloud Generator, tudo conduzido por prompts em linguagem natural no chat do coding agent
+4. Revisar e ativar os objetos gerados
 
 ### Exercícios
 
 - [2.1 - Criar o Pacote ABAP](#exercício-21-criar-o-pacote-abap)
-- [2.2 - Gerar o UI Service Transacional](#exercício-22-gerar-o-ui-service-transacional)
+- [2.2 - Adicionar o pacote ao workspace](#exercício-22-adicionar-o-pacote-ao-workspace)
+- [2.3 - Gerar o UI Service Transacional](#exercício-23-gerar-o-ui-service-transacional)
+- [2.4 - Revisar e Ativar os Objetos Gerados](#exercício-24-revisar-e-ativar-os-objetos-gerados)
 - [Resumo e Próximo Exercício](#resumo-e-próximo-exercício)
 
 > ℹ️ **Lembrete**: Não se esqueça de substituir todas as ocorrências do placeholder **`###`** pelo seu ID do grupo nos passos do exercício abaixo.
@@ -43,54 +47,59 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 ## Exercício 2.1: Criar o Pacote ABAP
 [^Topo da página](#)
 
-> Crie o seu pacote do exercício **`ZSITFOR_AI_###`** no **Visual Studio Code**. 
+> Crie o seu pacote do exercício **`ZSITFOR_AI_###`** pedindo ao seu coding agent, via ADT MCP tools.
+
+> ℹ️ **Nota**: Os prints abaixo usam o ID do grupo **`000`** como exemplo. Substitua **`###`** pelo seu ID do grupo.
+
+<details>
+  <summary>🔵 Cline - Clique para expandir!</summary>
+
+### Passo 1: Criar o pacote via MCP
+
+1. No **Cline** (Act mode), copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
+
+   ```
+   Crie um pacote ABAP usando a MCP tool com as seguintes propriedades:
+   - Nome: ZSITFOR_AI_###
+   - Descrição: RAP AI Package ###
+   - Super package: ZLOCAL
+   ```
+
+   ![Criação do pacote via MCP tool](images/ex02_cline_create_package.gif)
+
+</details>
+
+<details>
+  <summary>🔵 Claude Code - Clique para expandir!</summary>
+
+> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
+
+### Passo 1: Criar o pacote via MCP
+
+1. No **Claude Code**, copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
+
+   ```
+   Crie um pacote ABAP usando a MCP tool com as seguintes propriedades:
+   - Nome: ZSITFOR_AI_###
+   - Descrição: RAP AI Package ###
+   - Super package: ZLOCAL
+   ```
+
+</details>
+
+---
+
+## Exercício 2.2: Adicionar o pacote ao workspace
+[^Topo da página](#)
+
+> Adicione o pacote **`ZSITFOR_AI_###`** como uma pasta do workspace no **Visual Studio Code**.
+
+> ℹ️ **Nota**: Os prints abaixo usam o ID do grupo **`000`** como exemplo. Substitua **`###`** pelo seu ID do grupo.
 
 <details>
   <summary>🔵 Clique para expandir!</summary>
 
-> ℹ️ **Nota**: Os prints abaixo usam o ID do grupo **`000`** como exemplo. Substitua **`###`** pelo seu ID do grupo.
-
-### Passo 1: Criar o pacote
-
-1. Abra o **Command Palette** com **`Ctrl+Shift+P`** (macOS: **`Cmd+Shift+P`**), digite `>abap` e selecione **ABAP: Create New ABAP Object...**.
-
-   > 💡 **Dica**: Você também pode usar o atalho **`Ctrl+Shift+Alt+N`**.
-
-   ![Command Palette: ABAP Create New ABAP Object](images/ex02_create_package_01.png)
-
-2. Na lista de tipos de objeto, digite `package` e selecione **Package** (Type: `DEVC/K`).
-
-   ![Selecionar o tipo Package](images/ex02_create_package_02.png)
-
-3. Em **Package Properties: Name (1/3)**, informe o nome do pacote e pressione **Enter**:
-   ```
-   ZSITFOR_AI_###
-   ```
-
-   ![Nome do pacote](images/ex02_create_package_03.png)
-
-4. Em **Package Properties: Description (2/3)**, informe a descrição e pressione **Enter**:
-   ```
-   RAP AI Package ###
-   ```
-
-   ![Descrição do pacote](images/ex02_create_package_04.png)
-
-5. Em **Package Properties: Super Package (3/3)**, informe **`ZLOCAL`** e pressione **Enter**.
-
-   ![Super package ZLOCAL](images/ex02_create_package_05.png)
-
-6. Em **Software Component**, o valor **`ZLOCAL`** já vem preenchido (somente leitura). Pressione **Enter** para continuar.
-
-   ![Software component ZLOCAL](images/ex02_create_package_06.png)
-
-7. O pacote é criado e o arquivo **`zsitfor_ai_###.devc.json`** é aberto no editor. No **Explorer**, o pacote aparece em **System Library → ZLOCAL → `ZSITFOR_AI_###`**.
-
-   > ✅ Se você vir o arquivo `.devc.json` com `"superPackage": "ZLOCAL"`, o pacote foi criado com sucesso!
-
-   ![Pacote criado](images/ex02_create_package_07.png)
-
-### Passo 2: Adicionar o pacote ao workspace
+### Passo 1: Adicionar o pacote ao workspace
 
 1. Abra o **Command Palette** com **`Ctrl+Shift+P`** (macOS: **`Cmd+Shift+P`**), digite `>add` e selecione **ABAP: Add Package as Folder to Workspace...**.
 
@@ -104,7 +113,7 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 
    ![Nome da pasta no workspace](images/ex02_add_package_workspace_03.png)
 
-4. O pacote passa a aparecer como uma pasta própria no **Explorer**, contendo o arquivo `zsitfor_ai_###.devc.json`. É nessa pasta que os objetos gerados no Exercício 2.2 vão aparecer.
+4. O pacote passa a aparecer como uma pasta própria no **Explorer**, contendo o arquivo `zsitfor_ai_###.devc.json`. É nessa pasta que ficam os objetos gerados no Exercício 2.3.
 
    ![Pacote adicionado ao workspace](images/ex02_add_package_workspace_04.png)
 
@@ -112,43 +121,33 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 
 ---
 
-## Exercício 2.2: Gerar o UI Service Transacional
+## Exercício 2.3: Gerar o UI Service Transacional
 [^Topo da página](#)
 
-> Use as ADT MCP tools para gerar um OData UI service transacional RAP completo para as entidades Travel e Booking.
+> Use as tools do ADT MCP para gerar um OData UI service transacional RAP completo para as entidades Travel e Booking.
 
 > ⚠ **Aviso sobre resultados gerados por IA** ⚠
 > Esteja ciente de que os resultados gerados por IA na descrição deste exercício podem diferir dos seus. **Sempre revise o código e os artefatos gerados.**
 
 <details>
-  <summary>🔵 Clique para expandir!</summary>
+  <summary>🔵 Cline - Clique para expandir!</summary>
 
 ### Passo 1: Descobrir os generators disponíveis
 
-1. No **seu coding agent (Agent mode)**, digite:
+1. No **Cline** (Plan mode), digite:
 
    ```
    Liste todos os ABAP RAP generators disponíveis usando a MCP tool.
    ```
 
-   ![Generators listados pela MCP tool](images/ex02_available_generators.png)
+   ![Generators listados pela MCP tool](images/ex02_cline_available_generators.gif)
 
-### Passo 2: Obter o schema do generator (opcional)
+### Passo 2: Executar a criação dos objetos
 
-3. Para entender os parâmetros de entrada necessários, você pode perguntar ao seu coding agent:
-
-   ```
-   Obtenha o JSON schema do generator OData UI Service from Scratch.
-   ```
-
-4. Permita a chamada da tool `abap_generators-get_schema`. Revise o schema, que mostra quais campos o generator espera (nomes de entidades, listas de campos, sufixos etc.).
-
-### Passo 3: Executar o generator
-
-5. No **seu coding agent (Agent mode)**, copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
+2. No **Cline** (Act mode), copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
 
    ```
-   Gere um app SAP Fiori transacional para gerenciamento de viagens usando o ABAP RAP generator.
+   Gere um serviço oData v4 no modelo RAP para utilizar em App Fiori transacional para gerenciamento de viagens usando o Novo Serviço IU OData Completo.
 
    Use a seguinte especificação:
    - Pacote: ZSITFOR_AI_###
@@ -157,19 +156,62 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
    - Todos os nomes de objetos gerados devem terminar com o sufixo "###"
    ```
 
-6. O seu coding agent vai planejar a geração. Provavelmente ele vai chamar:
-   - `abap_generators-get_schema`: para recuperar o schema de entrada do generator
-   - `abap_generators-generate_objects`: para executar a geração
-
-   **Permita cada chamada de tool** quando solicitado.
+   > ⚠️ **Atenção**: o campo de sufixo do generator aceita no **máximo 3 caracteres**. Por isso o ID do grupo (`###`) deve ter até 3 caracteres, como `001` ou `A12`.
 
    > ℹ️ **Nota**: O generator pode levar um momento para executar. O progresso será exibido.
 
-   ![Generator em execução via MCP tool](images/ex02_generator_running.png)
+3. O Cline vai chamar as MCP tools do generator para criar os objetos. **Permita cada chamada de tool** quando solicitado.
 
-### Passo 4: Revisar os objetos gerados
+</details>
 
-7. Quando o generator terminar, o seu coding agent vai informar a lista de objetos gerados. Você deve ver entradas para:
+<details>
+  <summary>🔵 Claude Code - Clique para expandir!</summary>
+
+> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
+
+### Passo 1: Descobrir os generators disponíveis
+
+1. No **Claude Code**, digite:
+
+   ```
+   Liste todos os ABAP RAP generators disponíveis usando a MCP tool.
+   ```
+
+### Passo 2: Executar a criação dos objetos
+
+2. No **Claude Code**, copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
+
+   ```
+   Gere um serviço oData v4 no modelo RAP para utilizar em App Fiori transacional para gerenciamento de viagens usando o Novo Serviço IU OData Completo.
+
+   Use a seguinte especificação:
+   - Pacote: ZSITFOR_AI_###
+   - Entidade 1: Travel, baseada na estrutura /DMO/TRAVEL_DATA
+   - Entidade 2: Booking, baseada na estrutura /DMO/BOOKING_DATA (filha de Travel)
+   - Todos os nomes de objetos gerados devem terminar com o sufixo "###"
+   ```
+
+   > ⚠️ **Atenção**: o campo de sufixo do generator aceita no **máximo 3 caracteres**. Por isso o ID do grupo (`###`) deve ter até 3 caracteres, como `001` ou `A12`.
+
+3. O Claude Code vai chamar as MCP tools do generator para criar os objetos. **Permita cada chamada de tool** quando solicitado.
+
+   > ℹ️ **Nota**: O generator pode levar um momento para executar. O progresso será exibido.
+
+</details>
+
+---
+
+## Exercício 2.4: Revisar e Ativar os Objetos Gerados
+[^Topo da página](#)
+
+> Revise os objetos gerados pelo generator no Exercício 2.3 e ative-os no **Visual Studio Code**.
+
+<details>
+  <summary>🔵 Clique para expandir!</summary>
+
+### Passo 1: Revisar os objetos gerados
+
+1. Quando o generator terminar, o seu coding agent vai informar a lista de objetos gerados. Você deve ver entradas para:
    - Tabelas de banco de dados: **`ZTRAVEL###`**, **`ZTRAVEL_D###`**, **`ZBOOKING###`** e **`ZBOOKING_D###`**
    - CDS base views: **`ZR_TRAVEL###`**, **`ZR_BOOKING###`**
    - CDS projection views: **`ZC_TRAVEL###`**, **`ZC_BOOKING###`**
@@ -182,27 +224,15 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 
    > ℹ️ **Nota**: Os nomes exatos dos artefatos podem diferir um pouco, pois são gerados por IA e podem variar.
 
-   ![Saída do generator via MCP tool](images/ex02_generator_output.gif)
+   ![Resultado da geração pelo Cline](images/ex02_cline_generator_execution.gif)
 
-8. No **Explorer** do Visual Studio Code, pressione **F5** para atualizar o seu pacote **`ZSITFOR_AI_###`**. Você deve ver todos os objetos gerados listados nas respectivas pastas por tipo de objeto.
+2. No **Explorer** do Visual Studio Code, pressione **F5** para atualizar o seu pacote **`ZSITFOR_AI_###`**. Você deve ver todos os objetos gerados listados nas respectivas pastas por tipo de objeto.
 
-   ![Objetos gerados no Explorer do Visual Studio Code](images/ex02_generated_objects.gif)
+   ![Objetos gerados no Explorer do Visual Studio Code](images/ex02_cline_generated_objects.gif)
 
-### Passo 5: Ativar todos os objetos gerados
+### Passo 2: Ativar todos os objetos gerados
 
-9. Ative todos os objetos inativos de uma só vez usando o atalho de teclado:
-   - **`Ctrl+Shift+F3`** (macOS: **`Cmd+Shift+F3`**)
-
-   Ou pela opção `Activate All` na barra de ferramentas inferior
-
-   ![Ativar todos os objetos](images/ex02_activate_all.png)
-
-
-10. Uma caixa de diálogo mostra todos os objetos inativos. Selecione todos e clique em **Activate**.
-
-    > ⚠️ Se algum objeto falhar na ativação, verifique o painel **Problems** (**`Ctrl+Shift+M`**) para ver os detalhes do erro. Corrija os problemas e ative novamente.
-
-    > ℹ️ **Dica**: Você também pode pedir ao seu coding agent para ativar via MCP: digite `Ative todos os objetos do pacote ZSITFOR_AI_### usando a MCP tool` e permita a chamada da tool `abap_activate-objects`.
+    > ℹ️ **Dica**: Por padrão, a ferramenta já ativa todos os objetos. Porém, caso algum objeto não tenha sido ativado, você também pode pedir ao seu coding agent para ativar via MCP: digite `Ative todos os objetos do pacote ZSITFOR_AI_### usando a MCP tool` e permita a chamada da tool `abap_object_activate`.
 
 </details>
 
@@ -212,7 +242,8 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 [^Topo da página](#)
 
 Agora que você:
-- Criou o pacote ABAP **`ZSITFOR_AI_###`** no Visual Studio Code e o adicionou ao workspace
+- Criou o pacote ABAP **`ZSITFOR_AI_###`** via ADT MCP tools
+- Adicionou o pacote ao workspace do Visual Studio Code
 - Gerou um UI service transacional RAP completo (Travel + Booking) via ADT MCP tools
 - Ativou todos os objetos gerados
 
