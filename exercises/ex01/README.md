@@ -203,19 +203,14 @@ Se o ADT MCP Server não aparecer ou falhar ao iniciar:
 
    > ℹ️ **Nota**: Informar o seu token obtido no passo do item 6 do tópico 1.1 (_veja_ [Exercício 1.1: Habilitar o ADT MCP Server nas Configurações do Visual Studio Code](#exercício-11-habilitar-o-adt-mcp-server-nas-configurações-do-visual-studio-code)).
 
-3. Clique no botão **"Configure Tools"** (ícone de chave inglesa das tools) na barra de entrada do chat do Copilot.
 
-4. Uma lista de seleção rápida (quick pick) aparece mostrando os provedores de tools disponíveis. Você deve ver:
-   - **ADT MCP Server** com uma lista de tools abaixo dele (por exemplo, `abap_generators-list_generators`, `abap_creation-create_object` etc.)
+3. **Verifique se o MCP está ativo**: na aba **MCP** do Cline, o servidor **`abap-adt`** deve aparecer na lista com o botão de ativação ligado e uma **bolinha verde** ao lado.
 
+   ![MCP abap-adt ativo no Cline](images/ex1_cline_mcp_ativo.png)
 
-   > ✅ Se você vir o ADT MCP Server e as suas tools listadas, a sua configuração está completa!
+   > ℹ️ **Nota**: Se a bolinha não estiver verde, confira se o ADT MCP Server está em execução (Exercício 1.2) e se o token no JSON está correto. Depois clique no ícone de recarregar ao lado do servidor.
 
-   ![ADT MCP tools visíveis em Configure Tools do Copilot](images/ex1_mcp_tools_visible.png)
-
-5. Certifique-se de que as tools do ADT MCP Server estão **marcadas/habilitadas** na lista.
-
-6. **Teste rápido (sanity test)**: digite o prompt a seguir no chat do seu coding agent e pressione **Enter**:
+4. **Teste rápido (sanity test)**: digite o prompt a seguir no chat do seu coding agent e pressione **Enter**:
    ```
    Liste todos os ABAP RAP generators disponíveis usando a MCP tool.
    ```
