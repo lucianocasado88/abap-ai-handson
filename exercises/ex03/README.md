@@ -111,8 +111,6 @@ Carregar dados de demonstração torna o app mais interessante de usar nos demai
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
 
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
-
 1. No **Claude Code**, copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
 
    ```

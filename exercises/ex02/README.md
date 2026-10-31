@@ -72,8 +72,6 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
 
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
-
 ### Passo 1: Criar o pacote via MCP
 
 1. No **Claude Code**, copie e cole o prompt a seguir. Substitua **`###`** pelo seu ID do grupo:
@@ -166,8 +164,6 @@ No [RAP120](https://github.com/SAP-samples/abap-platform-rap120) (Eclipse ADT), 
 
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
-
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
 
 ### Passo 1: Descobrir os generators disponíveis
 

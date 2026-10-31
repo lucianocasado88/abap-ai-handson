@@ -47,8 +47,6 @@ Neste exercício, você vai usar **o seu coding agent em Agent mode** para defin
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
 
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
-
 1. No **Claude Code**, copie e cole o prompt a seguir:
 
    ```
@@ -122,8 +120,6 @@ Neste exercício, você vai usar **o seu coding agent em Agent mode** para defin
 
 <details>
   <summary>🔵 Claude Code - Clique para expandir!</summary>
-
-> 🚧 **Em construção**: os prints e detalhes do Claude Code serão adicionados em breve.
 
 1. No **Claude Code**, copie e cole o prompt a seguir:
 
